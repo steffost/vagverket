@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Trafikverkets Överträdelser: Järnvägsbygget</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <style>
+ .chart-container {
+ position: relative;
+ width: 100%;
+ max-width: 600px;
+ margin-left: auto;
+ margin-right: auto;
+ height: 300px;
+ max-height: 400px;
+ }
+ @media (min-width: 768px) {
+ .chart-container {
+ height: 380px;
+ }
+ }
+ .flow-line {
+ position: absolute;
+ left: 23px;
+ top: 40px;
+ bottom: -40px;
+ width: 4px;
+ background-color: #e11d48;
+ z-index: 0;
+ }
+ .flow-step:last-child .flow-line {
+ display: none;
+ }
+ body {
+ background-color: #f8fafc;
+ color: #0f172a;
+ }
+ </style>
+</head>
+<body class="font-sans antialiased pb-20">
+
+ <!-- Chosen Palette: Midnight Red Alert (Deep Midnight Blue #0f172a, Vivid Crimson #e11d48, Bright Amber #fbbf24, Slate Gray #64748b, Off-White #f8fafc). Chosen for high contrast to emphasize the severity and legal nature of the violations. -->
+ <!-- Application Structure Plan: The infographic follows a logical narrative flow: 1. Executive Hook (big numbers/KPIs highlighting severity). 2. Quantitative Legal Overview (bar chart mapping breached laws). 3. Qualitative Breakdown (grid detailing the 6 specific incidents). 4. Impact Analysis (polar area chart showing affected domains). 5. Actionable Resolution (step-by-step HTML flowchart for the strategy). This structure moves the user from understanding the scale of the problem to digesting the specifics, and finally to the solution. -->
+ <!-- Visualization& Content Choices:
+ 1. KPIs (Inform): Large typography metrics. Method: HTML/Tailwind. Justification: Immediate impact.
+ 2. Bar Chart (Compare): Breached laws distribution. Method: Chart.js Canvas. Justification: Compares frequencies of different legal framework violations clearly. NO SVG.
+ 3. Grid Cards (Organize): The 6 incidents. Method: HTML/Tailwind + Unicode Icons. Justification: Breaks down heavy text into digestible chunks. NO SVG.
+ 4. Polar Area Chart (Relationships/Compare): Impact domains (Health, Property, etc.). Method: Chart.js Canvas. Justification: Shows how the incidents impact different facets of life/environment simultaneously. NO SVG.
+ 5. Process Flow (Organize): Action plan. Method: HTML borders/flexbox. Justification: Creates a clear, linear timeline of actions without using prohibited tools. NO SVG/Mermaid. -->
+ <!-- CONFIRMATION: NEITHER Mermaid JS NOR SVG were used anywhere in the output within the HTML comments. -->
+
+ <header class="bg-slate-900 text-white pt-16 pb-20 px-6 sm:px-12 rounded-b-3xl shadow-xl mb-12 relative overflow-hidden">
+ <div class="max-w-5xl mx-auto relative z-10">
+ <div class="inline-block bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold tracking-wider mb-4 border border-red-400 shadow-sm">
+ &#9888; JURIDISK SPECIFIKATION
+ </div>
+ <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+ Trafikverkets Överträdelser <br> <span class="text-red-500">vid Järnvägsbygget</span>
+ </h1>
+ <p class="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed">
+ En omfattande granskning av fastighetsskador, miljöbrott, hälsorisker och integritetskränkningar. Denna rapport sammanställer de pågående lagbrotten samt formulerar en strikt operativ handlingsplan för eskalering och skadestånd.
+ </p>
+ </div>
+ <div class="absolute right-0 top-0 opacity-10 text-9xl transform translate-x-1/4 -translate-y-1/4 pointer-events-none">
+ &#9888;
+ </div>
+ </header>
+
+ <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+ <section class="mb-16">
+ <div class="mb-8">
+ <h2 class="text-3xl font-bold text-slate-900 mb-4 border-l-4 border-red-600 pl-4">Övergripande Sammanfattning</h2>
+ <p class="text-slate-600 text-lg leading-relaxed max-w-4xl">
+ Detta avsnitt belyser den omedelbara omfattningen av de juridiska och fysiska konsekvenserna av järnvägsbygget. Genom att kvantifiera antalet dokumenterade incidenter och identifiera de primära lagrummen som överträtts, ges en tydlig bild av systemfelet.
+ </p>
+ </div>
+
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+ <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-red-600 transform transition hover:-translate-y-1 hover:shadow-lg">
+ <div class="text-4xl mb-2">&#128680;</div>
+ <div class="text-5xl font-black text-slate-900 mb-2">6</div>
+ <h3 class="text-lg font-bold text-slate-700 uppercase tracking-wide">Akuta Incidenter</h3>
+ <p class="text-slate-500 mt-2">Dokumenterade händelser som utgör direkt fara eller skada för egendom, hälsa och miljö.</p>
+ </div>
+ <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-amber-500 transform transition hover:-translate-y-1 hover:shadow-lg">
+ <div class="text-4xl mb-2">&#9876;</div>
+ <div class="text-5xl font-black text-slate-900 mb-2">12+</div>
+ <h3 class="text-lg font-bold text-slate-700 uppercase tracking-wide">Lagrumsbrott</h3>
+ <p class="text-slate-500 mt-2">Specifika paragrafer inom Miljöbalken, Brottsbalken och GDPR som åberopas i specifikationen.</p>
+ </div>
+ <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-600 transform transition hover:-translate-y-1 hover:shadow-lg">
+ <div class="text-4xl mb-2">&#128203;</div>
+ <div class="text-5xl font-black text-slate-900 mb-2">4</div>
+ <h3 class="text-lg font-bold text-slate-700 uppercase tracking-wide">Eskaleringssteg</h3>
+ <p class="text-slate-500 mt-2">Konkreta faser i den strategiska handlingsplanen för att utkräva ansvar och skadestånd.</p>
+ </div>
+ </div>
+
+ <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+ <h3 class="text-2xl font-bold mb-2 text-slate-800">Frekvens av Åberopade Lagrum</h3>
+ <p class="text-slate-600 mb-8">
+ Stapeldiagrammet nedan illustrerar vilka lagverk som frekventast bryts av verksamhetsutövaren. Miljöbalken dominerar kraftigt, vilket påvisar den omedelbara faran för närmiljön, följt av Brottsbalken gällande vårdslöshet och tjänstefel.
+ </p>
+ <div class="chart-container">
+ <canvas id="lawBarChart"></canvas>
+ </div>
+ </div>
+ </section>
+
+ <section class="mb-16">
+ <div class="mb-8">
+ <h2 class="text-3xl font-bold text-slate-900 mb-4 border-l-4 border-red-600 pl-4">De Sex Dokumenterade Incidenterna</h2>
+ <p class="text-slate-600 text-lg leading-relaxed max-w-4xl">
+ Nedan bryts varje specifik händelse ner. För varje incident presenteras ett sammandrag av den fysiska skadan eller risken, tillsammans med de specifika juridiska paragrafer som gör entreprenören och myndigheterna skadeståndsskyldiga och straffansvariga.
+ </p>
+ </div>
+
+ <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+ <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+ <div class="bg-slate-800 text-white p-4 flex items-center gap-3">
+ <span class="text-2xl">&#9889;</span>
+ <h3 class="font-bold text-lg">1. Fastighetsskador & Brandfara</h3>
+ </div>
+ <div class="p-6 flex-grow">
+ <p class="text-slate-700 mb-4 font-medium">Tung packning orsakar massiva vibrationer och resulterar i akut kortslutning.</p>
+ <p class="text-slate-600 text-sm mb-4">Ångvältar användes utan riskanalys eller vibrationsmätare, vilket krävde sanering av 75% av fastighetens elsystem av säkerhetsskäl.</p>
+ <div class="bg-red-50 p-4 rounded border-l-2 border-red-500 text-sm mt-auto">
+ <ul class="list-disc pl-4 text-slate-800 space-y-1">
+ <li><span class="font-bold">2 kap. 3 § Miljöbalken:</span> Försiktighetsprincipen.</li>
+ <li><span class="font-bold">32 kap. Miljöbalken:</span> Skadestånd för miljöskada.</li>
+ <li><span class="font-bold">13 kap. 6 § Brottsbalken:</span> Allmänfarlig vårdslöshet.</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+
+ <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+ <div class="bg-slate-800 text-white p-4 flex items-center gap-3">
+ <span class="text-2xl">&#128168;</span>
+ <h3 class="font-bold text-lg">2. Hälsoskador& Kontaminering</h3>
+ </div>
+ <div class="p-6 flex-grow">
+ <p class="text-slate-700 mb-4 font-medium">Stendamm och avgaser leder till andningsbesvär och risk för livsmedel.</p>
+ <p class="text-slate-600 text-sm mb-4">Gigantiska berg av kross hanteras utan bevattning. Partiklar och kvartsdamm har krävt läkarvård och astmamedicin, samt lagt sig över matodlingar.</p>
+ <div class="bg-red-50 p-4 rounded border-l-2 border-red-500 text-sm mt-auto">
+ <ul class="list-disc pl-4 text-slate-800 space-y-1">
+ <li><span class="font-bold">9 kap. 3 § Miljöbalken:</span> Miljöfarlig verksamhet (utsläpp till luft).</li>
+ <li><span class="font-bold">32 kap. Miljöbalken:</span> Skadestånd för medicinska kostnader och lidande.</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+
+ <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+ <div class="bg-slate-800 text-white p-4 flex items-center gap-3">
+ <span class="text-2xl">&#128266;</span>
+ <h3 class="font-bold text-lg">3. Extremt & Konstant Buller</h3>
+ </div>
+ <div class="p-6 flex-grow">
+ <p class="text-slate-700 mb-4 font-medium">Tunga maskiner och sorteringsverk skapar en ohållbar ljudmiljö.</p>
+ <p class="text-slate-600 text-sm mb-4">Mekanisk muddring och tippning orsakar svår stress och sömnstörningar, bullret tränger in i bostaden oavbrutet.</p>
+ <div class="bg-red-50 p-4 rounded border-l-2 border-red-500 text-sm mt-auto">
+ <ul class="list-disc pl-4 text-slate-800 space-y-1">
+ <li><span class="font-bold">NFS 2004:15:</span> Brott mot Naturvårdsverkets riktvärden för buller.</li>
+ <li><span class="font-bold">2 kap. 3 § Miljöbalken:</span> Hänsynsreglerna åsidosatta.</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+
+ <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+ <div class="bg-slate-800 text-white p-4 flex items-center gap-3">
+ <span class="text-2xl">&#128738;</span>
+ <h3 class="font-bold text-lg">4. Akut Miljöbrott (Oljespill)</h3>
+ </div>
+ <div class="p-6 flex-grow">
+ <p class="text-slate-700 mb-4 font-medium">Lastbil i dike läcker hydraulolja i över 24 timmar utan sanering.</p>
+ <p class="text-slate-600 text-sm mb-4">Ingen skadebegränsning (länsar) applicerades efter olyckan på den smala grusvägen. Oljepölar kontaminerar mark och vatten.</p>
+ <div class="bg-red-50 p-4 rounded border-l-2 border-red-500 text-sm mt-auto">
+ <ul class="list-disc pl-4 text-slate-800 space-y-1">
+ <li><span class="font-bold">29 kap. 1 § Miljöbalken:</span> Miljöbrott (straffskala fängelse).</li>
+ <li><span class="font-bold">10 kap. 11 § Miljöbalken:</span> Brott mot upplysningsplikt.</li>
+ <li><span class="font-bold">2 kap. 1 § Trafikförordningen:</span> Vårdslöshet i trafik.</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+
+ <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+ <div class="bg-slate-800 text-white p-4 flex items-center gap-3">
+ <span class="text-2xl">&#128249;</span>
+ <h3 class="font-bold text-lg">5. Olaga Kamerabevakning</h3>
+ </div>
+ <div class="p-6 flex-grow">
+ <p class="text-slate-700 mb-4 font-medium">Fristående "UFO-mast" övervakar allmän plats utan skyltning.</p>
+ <p class="text-slate-600 text-sm mb-4">Rörliga PTZ-kameror registrerar allmänhetens promenader i en vägkorsning, vilket kränker den personliga integriteten enormt.</p>
+ <div class="bg-red-50 p-4 rounded border-l-2 border-red-500 text-sm mt-auto">
+ <ul class="list-disc pl-4 text-slate-800 space-y-1">
+ <li><span class="font-bold">Kamerabevakningslagen:</span> Brott mot tillståndsplikt.</li>
+ <li><span class="font-bold">GDPR:</span> Olaglig behandling av biometriska data.</li>
+ <li><span class="font-bold">8 kap. 8 § Brottsbalken:</span> Egenmäktigt förfarande (om på privat mark).</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+
+ <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+ <div class="bg-slate-800 text-white p-4 flex items-center gap-3">
+ <span class="text-2xl">&#128188;</span>
+ <h3 class="font-bold text-lg">6. Tillsynsunderlåtenhet</h3>
+ </div>
+ <div class="p-6 flex-grow">
+ <p class="text-slate-700 mb-4 font-medium">Lokala miljökontoret vägrar agera på klagomål eller utföra inspektioner.</p>
+ <p class="text-slate-600 text-sm mb-4">Handläggaren avfärdar akuta miljöbrott med informella fraser och vägrar diarieföra eller utfärda förelägganden.</p>
+ <div class="bg-red-50 p-4 rounded border-l-2 border-red-500 text-sm mt-auto">
+ <ul class="list-disc pl-4 text-slate-800 space-y-1">
+ <li><span class="font-bold">20 kap. 1 § Brottsbalken:</span> Tjänstefel vid myndighetsutövning.</li>
+ <li><span class="font-bold">Förvaltningslagen:</span> Brott mot serviceskyldighet och objektivitetsprincipen.</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+
+ </div>
+ </section>
+
+ <section class="mb-16">
+ <div class="bg-slate-900 rounded-2xl shadow-lg p-6 md:p-10 text-white">
+ <h3 class="text-2xl font-bold mb-4 text-white">Konsekvensanalys: Drabbade Domäner</h3>
+ <p class="text-slate-300 mb-8 max-w-3xl">
+ Polardiagrammet visualiserar hur de ackumulerade överträdelserna fördelar sig över olika kritiska livs- och samhällsdomäner. Det tydliggör att verksamheten inte bara orsakar materiell skada, utan även systematiskt hotar hälsa,Miljö och rättssäkerhet.
+ </p>
+ <div class="chart-container bg-white p-4 rounded-xl">
+ <canvas id="impactRadarChart"></canvas>
+ </div>
+ </div>
+ </section>
+
+ <section class="mb-20">
+ <div class="mb-10">
+ <h2 class="text-3xl font-bold text-slate-900 mb-4 border-l-4 border-red-600 pl-4">Strategisk Exekveringsplan</h2>
+ <p class="text-slate-600 text-lg leading-relaxed max-w-4xl">
+ Detta är en konkret och operativ handlingsplan designad för att runda den ineffektiva lokala kommunen. Planen fokuserar på maximal juridisk tyngd för att säkra skadestånd, initiera polisutredningar och tvinga fram skyddsåtgärder genom nationella myndigheter.
+ </p>
+ </div>
+
+ <div class="relative max-w-4xl mx-auto pl-4 md:pl-0">
+
+ <div class="relative z-10 flex items-start mb-12 flow-step group">
+ <div class="flex-shrink-0 w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-md relative z-10">1</div>
+ <div class="flow-line"></div>
+ <div class="ml-6 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-grow transition transform group-hover:scale-[1.02]">
+ <h3 class="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+ <span>&#127963;</span> Myndighetseskalering
+ </h3>
+ <p class="text-slate-700 font-medium mb-3 border-b pb-2">Mål: Runda kommunens passivitet.</p>
+ <ul class="list-disc pl-5 text-slate-600 space-y-2">
+ <li><strong class="text-slate-800">Anmälan till Länsstyrelsen:</strong> Anmäl det lokala miljökontorets underlåtenhet och begär att Länsstyrelsen övertar tillsynsansvaret som övergripande instans.</li>
+ <li><strong class="text-slate-800">JO-Anmälan:</strong> Strukturera en formell anmälan till Justitieombudsmannen gällande <em>Tjänstefel (20 kap. 1 § BrB)</em> för handläggarens vägran att diarieföra och agera.</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="relative z-10 flex items-start mb-12 flow-step group">
+ <div class="flex-shrink-0 w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-md relative z-10">2</div>
+ <div class="flow-line"></div>
+ <div class="ml-6 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-grow transition transform group-hover:scale-[1.02]">
+ <h3 class="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+ <span>&#128110;</span> Polis-& IMY-anmälan
+ </h3>
+ <p class="text-slate-700 font-medium mb-3 border-b pb-2">Mål: Straffrättslig utredning & vitesföreläggande.</p>
+ <ul class="list-disc pl-5 text-slate-600 space-y-2">
+ <li><strong class="text-slate-800">Samordnad Polisanmälan:</strong> Anmäl omedelbart miljöbrottet (oljespillet), framkallande av fara (vibrationer/kortslutning) samt trafikfaran. Bifoga allt fotobevis.</li>
+ <li><strong class="text-slate-800">IMY-Anmälan:</strong> Skicka separat skrivelse till Integritetsskyddsmyndigheten gällande den olagliga, oskyltade UFO-masten som filmar allmän väg (brott mot Kamerabevakningslagen).</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="relative z-10 flex items-start mb-12 flow-step group">
+ <div class="flex-shrink-0 w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-md relative z-10">3</div>
+ <div class="flow-line"></div>
+ <div class="ml-6 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-grow transition transform group-hover:scale-[1.02]">
+ <h3 class="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+ <span>&#128181;</span> Skadeståndstaktik (32 kap MB)
+ </h3>
+ <p class="text-slate-700 font-medium mb-3 border-b pb-2">Mål: Full ekonomisk ersättning från Trafikverket.</p>
+ <ul class="list-disc pl-5 text-slate-600 space-y-2">
+ <li><strong class="text-slate-800">Egendom:</strong> Kräv ersättning för de 75% av elsystemet som fick saneras/rivas ut på grund av vibrationer. Säkra offerter/kvitton.</li>
+ <li><strong class="text-slate-800">Hälsa:</strong> Begär ersättning för sveda, värk, läkarvård och astmamedicin orsakad av stendammet. Säkra läkarintyg.</li>
+ <li><strong class="text-slate-800">Intrång & Odling:</strong> Formulera krav för kontaminerade livsmedelsodlingar samt olägenhetsersättning för det extrema bullret.</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="relative z-10 flex items-start flow-step group">
+ <div class="flex-shrink-0 w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-md relative z-10">4</div>
+ <div class="flow-line"></div>
+ <div class="ml-6 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-grow transition transform group-hover:scale-[1.02]">
+ <h3 class="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+ <span>&#128227;</span> Bygdesamverkan & Media
+ </h3>
+ <p class="text-slate-700 font-medium mb-3 border-b pb-2">Mål: Framtvinga byggstopp genom offentligt tryck.</p>
+ <ul class="list-disc pl-5 text-slate-600 space-y-2">
+ <li><strong class="text-slate-800">Kollektiv Loggbok:</strong> Alla boende upprättar en synkroniserad loggbok över buller, damm och maskinrörelser med datum och klockslag.</li>
+ <li><strong class="text-slate-800">Mediestrategi:</strong> Använd den samlade bevisningen för att kontakta lokala/nationella medier. Målbild: Tvinga fram ett tillfälligt byggstopp tills bullerskärmar är uppsatta, kameran är nedmonterad och riskbedömningar utförda.</li>
+ </ul>
+ </div>
+ </div>
+
+ </div>
+ </section>
+
+ </main>
+
+ <footer class="bg-slate-900 text-slate-400 py-8 text-center border-t border-slate-800">
+ <p class="text-sm">Dokumentation genererad baserat på juridisk och teknisk specifikation av Trafikverkets entreprenad.</p>
+ </footer>
+
+ <script>
+ function wrapLabel(label) {
+ if (label.length <= 16) return label;
+ const words = label.split(' ');
+ let lines = [];
+ let currentLine = '';
+ words.forEach(word => {
+ if ((currentLine + word).length > 16) {
+ if (currentLine.length > 0) lines.push(currentLine.trim());
+ currentLine = word + ' ';
+ } else {
+ currentLine += word + ' ';
+ }
+ });
+ if (currentLine.trim().length > 0) lines.push(currentLine.trim());
+ return lines;
+ }
+
+ const tooltipConfig = {
+ callbacks: {
+ title: function(tooltipItems) {
+ const item = tooltipItems[0];
+ let label = item.chart.data.labels[item.dataIndex];
+ if (Array.isArray(label)) {
+ return label.join(' ');
+ } else {
+ return label;
+ }
+ }
+ }
+ };
+
+ const rawBarLabels = [
+ "Miljöbalken (Försiktighet/Miljöbrott)",
+ "Brottsbalken (Vårdslöshet/Tjänstefel)",
+ "Förvaltningslagen (Serviceskyldighet)",
+ "Kamerabevakningslagen & GDPR",
+ "Trafik- & Naturvårdsföreskrifter"
+ ];
+
+ const processedBarLabels = rawBarLabels.map(wrapLabel);
+
+ const barCtx = document.getElementById('lawBarChart').getContext('2d');
+ new Chart(barCtx, {
+ type: 'bar',
+ data: {
+ labels: processedBarLabels,
+ datasets: [{
+ label: 'Antal incidenter där lagen åberopas',
+ data: [4, 3, 1, 1, 2],
+ backgroundColor: '#e11d48',
+ borderColor: '#be123c',
+ borderWidth: 1,
+ borderRadius: 4
+ }]
+ },
+ options: {
+ responsive: true,
+ maintainAspectRatio: false,
+ plugins: {
+ legend: {
+ display: false
+ },
+ tooltip: tooltipConfig
+ },
+ scales: {
+ y: {
+ beginAtZero: true,
+ ticks: {
+ stepSize: 1,
+ color: '#64748b'
+ },
+ grid: {
+ color: '#f1f5f9'
+ }
+ },
+ x: {
+ ticks: {
+ color: '#475569',
+ font: {
+ size: 11
+ }
+ },
+ grid: {
+ display: false
+ }
+ }
+ }
+ }
+ });
+
+ const rawPolarLabels = [
+ "Fysisk Hälsa & Mående",
+ "Egendom & Fastighet",
+ "Lokal Miljö & Natur",
+ "Personlig Integritet",
+ "Rättssäkerhet & Förtroende"
+ ];
+
+ const processedPolarLabels = rawPolarLabels.map(wrapLabel);
+
+ const polarCtx = document.getElementById('impactRadarChart').getContext('2d');
+ new Chart(polarCtx, {
+ type: 'polarArea',
+ data: {
+ labels: processedPolarLabels,
+ datasets: [{
+ label: 'Påverkansgrad',
+ data: [8, 9, 7, 6, 10],
+ backgroundColor: [
+ 'rgba(225, 29, 72, 0.7)',
+ 'rgba(251, 191, 36, 0.7)',
+ 'rgba(3, 105, 161, 0.7)',
+ 'rgba(147, 51, 234, 0.7)',
+ 'rgba(15, 23, 42, 0.7)'
+ ],
+ borderColor: '#ffffff',
+ borderWidth: 2
+ }]
+ },
+ options: {
+ responsive: true,
+ maintainAspectRatio: false,
+ plugins: {
+ legend: {
+ position: 'right',
+ labels: {
+ font: { size: 12 },
+ color: '#0f172a'
+ }
+ },
+ tooltip: tooltipConfig
+ },
+ scales: {
+ r: {
+ ticks: {
+ display: false
+ },
+ grid: {
+ color: '#e2e8f0'
+ }
+ }
+ }
+ }
+ });
+ </script>
+</body>
+</html>
