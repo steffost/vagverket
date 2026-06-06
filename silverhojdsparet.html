@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Granskning: Silverhöjdspåret - Vad händer bakom kulisserna?</title>
+
+ <!-- Fonts -->
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+ <!-- Icons -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+ <!-- Tailwind CSS -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ fontFamily: {
+ sans: ['Inter', 'sans-serif'],
+ },
+ colors: {
+ dark: '#0f172a',
+ darker: '#020617',
+ accent: '#eab308', // Varningsgul
+ danger: '#ef4444', // Röd
+ card: '#1e293b'
+ }
+ }
+ }
+ }
+ </script>
+ <style>
+ body {
+ background-color: #020617;
+ color: #f8fafc;
+ }
+ .glass-panel {
+ background: rgba(30, 41, 59, 0.7);
+ backdrop-filter: blur(10px);
+ border: 1px solid rgba(255, 255, 255, 0.1);
+ }
+ .pulse-red {
+ animation: pulse-red 2s infinite;
+ }
+ @keyframes pulse-red {
+ 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+ 70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+ 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+ }
+ </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-darker">
+
+ <nav class="fixed w-full z-50 glass-panel border-b border-gray-800">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-16">
+ <div class="flex items-center gap-2">
+ <i class="fas fa-search text-accent text-xl"></i>
+ <span class="font-bold text-xl tracking-tight text-white">Granskning<span class="text-accent">Silverhöjden</span></span>
+ </div>
+ <div class="hidden md:block">
+ <div class="ml-10 flex items-baseline space-x-8">
+ <a href="#oversikt" class="hover:text-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Översikt</a>
+ <a href="#problemet" class="hover:text-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Problemet</a>
+ <a href="#varningssignaler" class="hover:text-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Varningssignaler</a>
+ <a href="#agera" class="bg-accent text-darker px-4 py-2 rounded-md text-sm font-bold hover:bg-yellow-400 transition-colors">Agera Nu</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </nav>
+
+ <main>
+ <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+ <div class="absolute inset-0 z-0 opacity-20">
+ <div class="absolute inset-0 bg-gradient-to-b from-transparent to-darker"></div>
+ <!-- Placeholder för bakgrundsbild (t.ex. en mörk grusgrop/tågräls) -->
+ <img src="https://placehold.co/1920x1080/020617/334155?text=Silverhöjdspåret" alt="Background" class="w-full h-full object-cover">
+ </div>
+
+ <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+ <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-accent text-sm font-semibold mb-6">
+ <i class="fas fa-exclamation-triangle"></i>
+ Medborgargranskning pågår
+ </div>
+ <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+ Vad döljer sig bakom <br class="hidden md:block">
+ <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-200">Silverhöjdspåret?</span>
+ </h1>
+ <p class="mt-4 max-w-2xl text-lg md:text-xl text-gray-300 mx-auto mb-10">
+ Ett infrastrukturprojekt för hundratals miljoner. Komplexa kedjor av underleverantörer. Oljeutsläpp, oregistrerad arbetskraft och slutenhet. Det är dags att belysa vad som faktiskt sker på marken.
+ </p>
+ <div class="flex justify-center gap-4">
+ <a href="#varningssignaler" class="bg-danger text-white px-8 py-4 rounded-lg font-bold hover:bg-red-500 transition-colors shadow-lg pulse-red">
+ Se Bevisen
+ </a>
+ <a href="#oversikt" class="glass-panel text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition-colors">
+ Läs Kartläggningen
+ </a>
+ </div>
+ </div>
+ </section>
+
+ <section id="oversikt" class="py-16 bg-dark">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <h2 class="text-3xl font-bold mb-2">Huvudsakliga Aktörer</h2>
+ <p class="text-gray-400 mb-10">Vilka bär ansvaret för projektet och tillsynen?</p>
+
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+ <!-- Aktör: Trafikverket -->
+ <div class="glass-panel p-6 rounded-xl border-t-4 border-t-blue-500 hover:-translate-y-1 transition-transform">
+ <i class="fas fa-hard-hat text-blue-500 text-3xl mb-4"></i>
+ <h3 class="text-xl font-bold mb-2">Trafikverket</h3>
+ <p class="text-sm text-gray-400 mb-4">Beställare & Byggherre</p>
+ <p class="text-sm">Har fått kritik från Riksrevisionen för brister i beställarkompetens och inköpsverksamhet.</p>
+ </div>
+
+ <!-- Aktör: NYAB -->
+ <div class="glass-panel p-6 rounded-xl border-t-4 border-t-accent hover:-translate-y-1 transition-transform">
+ <i class="fas fa-building text-accent text-3xl mb-4"></i>
+ <h3 class="text-xl font-bold mb-2">NYAB AB (publ)</h3>
+ <p class="text-sm text-gray-400 mb-4">Huvudentreprenör (238 mkr)</p>
+ <p class="text-sm">Ansvarig för projektet. Problemet ligger ofta i de oöverskådliga leden av underleverantörer.</p>
+ </div>
+
+ <!-- Aktör: Länsstyrelsen -->
+ <div class="glass-panel p-6 rounded-xl border-t-4 border-t-green-500 hover:-translate-y-1 transition-transform">
+ <i class="fas fa-leaf text-green-500 text-3xl mb-4"></i>
+ <h3 class="text-xl font-bold mb-2">Länsstyrelsen Örebro</h3>
+ <p class="text-sm text-gray-400 mb-4">Regional Tillsyn</p>
+ <p class="text-sm">Ansvarig för tillsyn av vattenverksamhet och större miljöpåverkan i området.</p>
+ </div>
+
+ <!-- Aktör: Kommunen -->
+ <div class="glass-panel p-6 rounded-xl border-t-4 border-t-purple-500 hover:-translate-y-1 transition-transform">
+ <i class="fas fa-city text-purple-500 text-3xl mb-4"></i>
+ <h3 class="text-xl font-bold mb-2">BMB</h3>
+ <p class="text-sm text-gray-400 mb-4">Lokal Tillsyn (Ljusnarsberg)</p>
+ <p class="text-sm">Bergslagens miljö- och byggförvaltning. Hanterar lokala miljöbrott och bygglovsfrågor.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section id="problemet" class="py-16 bg-darker border-y border-gray-800">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+ <div>
+ <h2 class="text-3xl font-bold mb-6">Det systematiska fusket i branschen</h2>
+ <div class="space-y-6 text-gray-300">
+ <p>Enligt Brottsförebyggande rådet (Brå) 2025 är byggbranschen en av favoriterna för den organiserade brottsligheten. Företag används som verktyg för penningtvätt, smuggling och svart arbetskraft.</p>
+
+ <blockquote class="border-l-4 border-accent pl-4 italic bg-card p-4 rounded-r-lg">
+ "Finns det utländsk arbetskraft i en entreprenad är det ett starkt tecken på fusk."
+ <footer class="text-sm font-semibold text-gray-400 mt-2">— Lennart Weiss, Kommersiell direktör, Veidekke</footer>
+ </blockquote>
+
+ <h3 class="text-xl font-bold text-white mt-8 mb-4">Mörkertalet: Underleverantörerna</h3>
+ <ul class="space-y-3">
+ <li class="flex items-start gap-3">
+ <i class="fas fa-times-circle text-danger mt-1"></i>
+ <span><strong>Djupa kedjor:</strong> Ofta 3-5 led av underleverantörer där ansvaret suddas ut.</span>
+ </li>
+ <li class="flex items-start gap-3">
+ <i class="fas fa-times-circle text-danger mt-1"></i>
+ <span><strong>Målvakter:</strong> Utländska bolag (ofta från Polen, Rumänien, Baltikum) används som strobelbolag.</span>
+ </li>
+ <li class="flex items-start gap-3">
+ <i class="fas fa-times-circle text-danger mt-1"></i>
+ <span><strong>Bristande kontroll:</strong> Riksrevisionen konstaterar att Trafikverket saknar tillräcklig beställarkompetens för att granska dessa nätverk.</span>
+ </li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="mt-10 lg:mt-0 relative">
+ <div class="absolute -inset-4 bg-gradient-to-r from-accent to-red-600 opacity-20 blur-xl rounded-full"></div>
+ <div class="glass-panel p-8 rounded-2xl relative z-10">
+ <h3 class="text-center font-bold text-gray-400 mb-6 uppercase tracking-wider text-sm">Entreprenadens Isberg</h3>
+
+ <!-- Isberg-illustration via HTML/CSS -->
+ <div class="space-y-2">
+ <div class="bg-blue-900/50 p-4 rounded text-center border border-blue-500/30">
+ <span class="font-bold block text-blue-200">NYAB AB (Huvudentreprenör)</span>
+ <span class="text-xs text-blue-300">Officiella papper, synliga utåt</span>
+ </div>
+ <div class="h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent my-2 opacity-50"></div>
+ <div class="text-center text-xs text-blue-400 uppercase tracking-widest mb-2">Vattenytan (Insynen försvinner)</div>
+
+ <div class="bg-gray-800 p-3 rounded text-center border border-gray-700">
+ <span class="text-sm">Underleverantör Led 1</span>
+ </div>
+ <div class="text-center text-gray-600"><i class="fas fa-arrow-down"></i></div>
+ <div class="bg-gray-800 p-3 rounded text-center border border-gray-700">
+ <span class="text-sm">Underleverantör Led 2</span>
+ </div>
+ <div class="text-center text-gray-600"><i class="fas fa-arrow-down"></i></div>
+ <div class="bg-red-900/30 p-4 rounded text-center border border-red-500/50 relative overflow-hidden">
+ <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20"></div>
+ <span class="font-bold block text-red-400">Okända Bolag (Led 3-5)</span>
+ <span class="text-xs text-red-300">Oregistrerad arbetskraft, miljöfusk, målvakter</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section id="varningssignaler" class="py-16 bg-dark">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="text-center mb-12">
+ <h2 class="text-3xl font-bold mb-4">Lokala Observationer & Varningssignaler</h2>
+ <p class="text-gray-400 max-w-2xl mx-auto">Vittnesmål från platsen pekar på allvarliga brister i både säkerhet och miljöhänsyn vid Silverhöjdspåret.</p>
+ </div>
+
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+ <!-- Observation 1 -->
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-danger flex gap-4">
+ <div class="flex-shrink-0 mt-1">
+ <div class="w-10 h-10 rounded-full bg-red-900/50 flex items-center justify-center text-danger">
+ <i class="fas fa-oil-can"></i>
+ </div>
+ </div>
+ <div>
+ <div class="flex items-center gap-2 mb-1">
+ <span class="bg-danger text-white text-xs font-bold px-2 py-0.5 rounded uppercase">Kritiskt</span>
+ <h3 class="font-bold text-lg">Miljöbrott: Vält Lastbil</h3>
+ </div>
+ <p class="text-gray-300 text-sm mb-2">En lastbil välte och låg kvar i cirka 1,5 dygn. Under tiden läckte olja rakt ut i marken. Ett solklart brott mot miljöbalken och tecken på gravt bristande säkerhetsrutiner.</p>
+ <p class="text-xs text-gray-500"><i class="fas fa-info-circle"></i> Kräver omedelbar anmälan till BMB och Räddningstjänst.</p>
+ </div>
+ </div>
+
+ <!-- Observation 2 -->
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-orange-500 flex gap-4">
+ <div class="flex-shrink-0 mt-1">
+ <div class="w-10 h-10 rounded-full bg-orange-900/50 flex items-center justify-center text-orange-500">
+ <i class="fas fa-dumpster"></i>
+ </div>
+ </div>
+ <div>
+ <div class="flex items-center gap-2 mb-1">
+ <span class="bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded uppercase">Allvarligt</span>
+ <h3 class="font-bold text-lg">Möjligt Illegalt Upplag</h3>
+ </div>
+ <p class="text-gray-300 text-sm mb-2">En avlastningsplats har upprättats i direkt anslutning till bostadshus. Finns det tillstånd för detta? Ofta skapas illegala upplag för att spara tid och pengar.</p>
+ </div>
+ </div>
+
+ <!-- Observation 3 -->
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-orange-500 flex gap-4">
+ <div class="flex-shrink-0 mt-1">
+ <div class="w-10 h-10 rounded-full bg-orange-900/50 flex items-center justify-center text-orange-500">
+ <i class="fas fa-users-slash"></i>
+ </div>
+ </div>
+ <div>
+ <div class="flex items-center gap-2 mb-1">
+ <span class="bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded uppercase">Allvarligt</span>
+ <h3 class="font-bold text-lg">Oregistrerad Arbetskraft?</h3>
+ </div>
+ <p class="text-gray-300 text-sm mb-2">Utländska arbetare har observerats röja mark för hand. Kombinerat med otydliga företagsbilar är detta en stark indikator på svart arbetskraft och lönedumpning i lägre led.</p>
+ </div>
+ </div>
+
+ <!-- Observation 4 -->
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-accent flex gap-4">
+ <div class="flex-shrink-0 mt-1">
+ <div class="w-10 h-10 rounded-full bg-yellow-900/50 flex items-center justify-center text-accent">
+ <i class="fas fa-truck-moving"></i>
+ </div>
+ </div>
+ <div>
+ <div class="flex items-center gap-2 mb-1">
+ <span class="bg-accent text-darker text-xs font-bold px-2 py-0.5 rounded uppercase">Varning</span>
+ <h3 class="font-bold text-lg">Överbelastade Fordon</h3>
+ </div>
+ <p class="text-gray-300 text-sm mb-2">Lastbilar med 10+ ton sten och grus trafikerar området, vilket utgör en enorm säkerhetsrisk för närboende och sliter extremt på lokal infrastruktur.</p>
+ </div>
+ </div>
+
+ </div>
+ </div>
+ </section>
+
+ <section id="agera" class="py-16 bg-card">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="bg-gradient-to-br from-darker to-dark p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-700">
+ <h2 class="text-3xl font-bold mb-8 text-center">Handlingsplan: Så stoppar vi fusket</h2>
+
+ <div class="grid md:grid-cols-2 gap-12">
+
+ <!-- Steg för steg -->
+ <div>
+ <h3 class="text-xl font-bold mb-6 text-accent border-b border-gray-700 pb-2">1. Vad du kan göra idag</h3>
+ <ul class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-600 before:to-transparent">
+ <li class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+ <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-darker bg-accent text-darker font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">1</div>
+ <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-4 rounded-lg">
+ <h4 class="font-bold text-white mb-1">Säkra bevisen</h4>
+ <p class="text-sm text-gray-400">Ta foton och filma. Se till att datumstämpel och GPS-koordinater är aktiverade på telefonen. Skriv ner registreringsnummer.</p>
+ </div>
+ </li>
+ <li class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+ <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-darker bg-accent text-darker font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">2</div>
+ <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-4 rounded-lg">
+ <h4 class="font-bold text-white mb-1">Samla grannarna</h4>
+ <p class="text-sm text-gray-400">Gå ihop. Myndigheter har mycket svårare att ignorera massanmälningar än enskilda klagomål.</p>
+ </div>
+ </li>
+ <li class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+ <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-darker bg-accent text-darker font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">3</div>
+ <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-4 rounded-lg">
+ <h4 class="font-bold text-white mb-1">Kontakta Media</h4>
+ <p class="text-sm text-gray-400">Tipsa NA (Nerikes Allehanda), SVT Nyheter Örebro/Dalarna och P4. Skicka med din dokumentation.</p>
+ </div>
+ </li>
+ </ul>
+ </div>
+
+ <!-- Officiella kontakter -->
+ <div>
+ <h3 class="text-xl font-bold mb-6 text-accent border-b border-gray-700 pb-2">2. Anmäl till myndigheter</h3>
+
+ <div class="space-y-4">
+ <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700 flex justify-between items-center">
+ <div>
+ <h4 class="font-bold text-red-400">Räddningstjänsten</h4>
+ <p class="text-xs text-gray-400">Vid akuta miljöhot (oljeläckage)</p>
+ </div>
+ <a href="tel:112" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm font-bold transition-colors">Ring 112</a>
+ </div>
+
+ <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700 flex justify-between items-center">
+ <div>
+ <h4 class="font-bold text-white">Polisen</h4>
+ <p class="text-xs text-gray-400">Anmälan om miljöbrott (ej akut)</p>
+ </div>
+ <a href="tel:11414" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm font-bold transition-colors">Ring 114 14</a>
+ </div>
+
+ <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700 flex justify-between items-center">
+ <div>
+ <h4 class="font-bold text-white">BMB (Kommunen)</h4>
+ <p class="text-xs text-gray-400">Lokal miljötillsyn, illegala upplag</p>
+ </div>
+ <button onclick="copyToClipboard('bmb@lindesberg.se')" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm font-bold transition-colors flex items-center gap-2">
+ <i class="fas fa-copy"></i> Kopiera e-post
+ </button>
+ </div>
+
+ <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700 flex justify-between items-center">
+ <div>
+ <h4 class="font-bold text-white">Länsstyrelsen Örebro</h4>
+ <p class="text-xs text-gray-400">Tillsyn vattendrag & dikespåverkan</p>
+ </div>
+ <button onclick="copyToClipboard('orebro@lansstyrelsen.se')" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm font-bold transition-colors flex items-center gap-2">
+ <i class="fas fa-copy"></i> Kopiera e-post
+ </button>
+ </div>
+ </div>
+
+ <!-- Custom Message Box for Copy Actions -->
+ <div id="toast" class="fixed bottom-5 right-5 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+ E-postadress kopierad till urklipp!
+ </div>
+
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+ </main>
+
+ <footer class="bg-darker py-8 border-t border-gray-800 text-center">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex justify-center items-center gap-2 mb-4">
+ <i class="fas fa-shield-alt text-gray-500"></i>
+ <span class="text-gray-500 font-medium">Medborgargranskning för en ren byggbransch</span>
+ </div>
+ <p class="text-sm text-gray-600">
+ Denna sida är skapad för att sprida ljus över missförhållanden. Informationen bygger på lokala observationer ställda mot branschrapporter.
+ </p>
+ </div>
+ </footer>
+
+ <script>
+ // Funktion för att kopiera e-post och visa en toast-notis istället för alert()
+ function copyToClipboard(text) {
+ // Skapa ett temporärt textarea-element
+ const tempInput = document.createElement('textarea');
+ tempInput.value = text;
+ document.body.appendChild(tempInput);
+
+ // Markera och kopiera texten
+ tempInput.select();
+ document.execCommand('copy');
+
+ // Ta bort det temporära elementet
+ document.body.removeChild(tempInput);
+
+ // Visa toast-meddelande
+ showToast();
+ }
+
+ function showToast() {
+ const toast = document.getElementById('toast');
+ toast.classList.remove('translate-y-20', 'opacity-0');
+
+ setTimeout(() => {
+ toast.classList.add('translate-y-20', 'opacity-0');
+ }, 3000);
+ }
+
+ // Lägg till smidig scroll för länkar
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+ anchor.addEventListener('click', function (e) {
+ e.preventDefault();
+ const target = document.querySelector(this.getAttribute('href'));
+ if (target) {
+ target.scrollIntoView({
+ behavior: 'smooth'
+ });
+ }
+ });
+ });
+ });
+ </script>
+</body>
+</html>
