@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Pressklipp — Silverhöjdspåret</title>
+
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Fira Code', 'monospace'] },
+ colors: { dark: '#0f172a', darker: '#020617', accent: '#eab308', danger: '#ef4444', card: '#1e293b' }
+ }
+ }
+ }
+ </script>
+ <style>
+ body { background-color: #020617; color: #f8fafc; }
+ .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+ </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-darker">
+
+ <nav class="fixed w-full z-50 glass-panel border-b border-gray-800">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-16">
+ <div class="flex items-center gap-2">
+ <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+ <i class="fas fa-arrow-left text-accent text-xl"></i>
+ <span class="font-bold text-xl tracking-tight text-white">Startsida</span>
+ </a>
+ </div>
+ <div class="text-sm text-gray-400">
+ <i class="fas fa-newspaper text-accent"></i>
+ <span class="ml-1">Pressklipp</span>
+ </div>
+ </div>
+ </div>
+ </nav>
+
+ <main class="pt-24 pb-12 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+ <section class="mb-12">
+ <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-accent text-sm font-semibold mb-6">
+ <i class="fas fa-newspaper"></i>
+ Media & Opinion
+ </div>
+ <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+ Pressklipp om <br>
+ <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-200">Silverhöjdspåret</span>
+ </h1>
+ <p class="mt-4 max-w-3xl text-lg text-gray-300">
+ Allt som publicerats — nyhetsartiklar, byalag-rapporter, sociala medier-inlägg, officiella myndighetsutlåtanden. Kronologiskt, med källa och URL.
+ </p>
+ <p class="mt-2 text-sm text-gray-500">
+ <i class="fas fa-info-circle"></i> Senast uppdaterad: 2026-06-14
+ </p>
+ </section>
+
+ <!-- NYA LUDVIKA TIDNING -->
+ <section class="mb-12">
+ <h2 class="text-2xl font-bold mb-6 text-accent mono">
+ <i class="fas fa-newspaper mr-2"></i>// Nya Ludvika Tidning (NLT)
+ </h2>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-red-500 mb-4">
+ <div class="flex items-start justify-between mb-3">
+ <div>
+ <h3 class="text-xl font-bold text-white">"200 miljoner på 168 timmar: 'Planerat i tre år'"</h3>
+ <p class="text-sm text-gray-400 mt-1">30 maj 2026 — Grängesberg-vinkel — Bild: Kewin Adolfsson</p>
+ </div>
+ <span class="bg-danger text-white text-xs font-bold px-2 py-1 rounded uppercase whitespace-nowrap">Viktig</span>
+ </div>
+ <p class="text-gray-300 mb-3">
+ Artikel som avslöjar storleken på den intensiva byggveckan. <strong class="text-accent">200 miljoner kronor</strong> under <strong class="text-accent">168 timmar (1 vecka)</strong> för spårbytet. Underrubrik: "Järnvägen rustas upp – <em>för miljarder</em>".
+ </p>
+ <blockquote class="border-l-4 border-accent pl-4 italic bg-card p-3 rounded-r-lg mb-3 text-sm">
+ "Planerat i tre år"
+ </blockquote>
+ <p class="text-sm text-gray-400 mb-3">
+ <strong>Foto:</strong> Trafikverkets projektledare Fredrik Arwehed (på bilden bredvid texten).
+ </p>
+ <a href="https://www.nyaludvikatidning.se/200-miljoner-pa-168-timmar-planerat-i-tre-ar/" target="_blank" rel="noopener" class="text-accent text-sm hover:underline">
+ <i class="fas fa-external-link-alt"></i> nyaludvikatidning.se/200-miljoner-pa-168-timmar-planerat-i-tre-ar/
+ </a>
+ </div>
+ </section>
+
+ <!-- DALADEMOKRATEN -->
+ <section class="mb-12">
+ <h2 class="text-2xl font-bold mb-6 text-accent mono">
+ <i class="fas fa-newspaper mr-2"></i>// Dalademokraten
+ </h2>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-green-500 mb-4">
+ <div class="flex items-start justify-between mb-3">
+ <div>
+ <h3 class="text-xl font-bold text-white">"Jan Christians med lyckosam Austin A40 från 1961"</h3>
+ <p class="text-sm text-gray-400 mt-1">25 maj 2015 — Borlänge</p>
+ </div>
+ <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded uppercase whitespace-nowrap">Personprofil</span>
+ </div>
+ <p class="text-gray-300 mb-3">
+ Artikel om Jan Christians som racerförare — avslöjar omfattande personprofil: bor i Torsång, född ca 1960, medlem i Racerhistoriska Klubben, tävlar i 1000cc-cupen. Tränar på Grängesbergs övningsbana. Har Austin A40 (1961) och TVR 3000S (1978).
+ </p>
+ <blockquote class="border-l-4 border-accent pl-4 italic bg-card p-3 rounded-r-lg mb-3 text-sm">
+ "Jag gillar engelska bilar och tävlandet."
+ <span class="block text-xs text-gray-500 mt-1 not-italic">— Jan Christians</span>
+ </blockquote>
+ <p class="text-sm text-gray-400 mb-3">
+ <strong>Betydelse:</strong> Bekräftar att Jan är lokalt förankrad, tekniskt kunnig, och har personlig koppling till Grängesberg-området (där projektet pågår).
+ </p>
+ <a href="https://www.dalademokraten.se/borlange/jan-christians-med-lyckosam-austin-a40-fran-1961/" target="_blank" rel="noopener" class="text-accent text-sm hover:underline">
+ <i class="fas fa-external-link-alt"></i> dalademokraten.se/borlange/jan-christians-med-lyckosam-austin-a40-fran-1961/
+ </a>
+ </div>
+ </section>
+
+ <!-- TRAFIKVERKET OFFICIELLA UTTALANDEN -->
+ <section class="mb-12">
+ <h2 class="text-2xl font-bold mb-6 text-accent mono">
+ <i class="fas fa-landmark mr-2"></i>// Trafikverket — Officiella uttalanden
+ </h2>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-blue-500 mb-4">
+ <div class="flex items-start justify-between mb-3">
+ <div>
+ <h3 class="text-xl font-bold text-white">"Uppdaterad tidplanering presenteras"</h3>
+ <p class="text-sm text-gray-400 mt-1">10 mars 2026 — Trafikverket nyhet</p>
+ </div>
+ <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded uppercase whitespace-nowrap">Officiellt</span>
+ </div>
+ <p class="text-gray-300 mb-3">
+ Fredrik Arwehed citeras utförligt i Trafikverkets egen nyhet. Avslöjar projektets 24/7-karaktär.
+ </p>
+ <blockquote class="border-l-4 border-accent pl-4 italic bg-card p-3 rounded-r-lg mb-3 text-sm">
+ "Jag vill verkligen tacka alla närboende för tålamodet så här långt med pågående insatser vid spårmiljön. Jag är också mycket tacksam för att informationsmötet som vi genomförde i Ställberg var såpass välbesökt. Jag hoppas också att vi nu kunnat besvara de frågor som ställdes."
+ <span class="block text-xs text-gray-500 mt-1 not-italic">— Fredrik Arwehed, Trafikverkets projektledare</span>
+ </blockquote>
+ <blockquote class="border-l-4 border-accent pl-4 italic bg-card p-3 rounded-r-lg mb-3 text-sm">
+ "Det kommer på flera sätt att bli en intensiv byggsäsong och därför har vi ökat antalet resurser som kan ta emot frågor."
+ </blockquote>
+ <p class="text-sm text-gray-400 mb-3">
+ <strong>Nyckelfakta från artikeln:</strong>
+ </p>
+ <ul class="text-sm text-gray-300 space-y-1 mb-3">
+ <li>• Upphandling av entreprenör avslutad</li>
+ <li>• Start av årets aktiviteter: mars/april 2026</li>
+ <li>• <strong>Mest intensiva perioden:</strong> vecka 22, 25-31 maj (både Silverhöjdspåret OCH Hörkenspåret stängt)</li>
+ <li>• <strong>Avstängt i 15 veckor:</strong> 20 april - 2 augusti 2026</li>
+ <li>• <strong>8 nya spårväxlar (4 i Ställdalen, 4 i Grängesberg)</strong> — arbete dygnet runt under intensiva perioder</li>
+ <li>• Uppdaterade tidplaner presenteras ca varannan vecka från och med mitten av april</li>
+ </ul>
+ <a href="https://www.trafikverket.se/vara-projekt/projekt-i-dalarnas-lan/silverhojdsparet-sparbyte-och-upprustning/nyheter/2026/uppdaterad-tidplanering-presenteras/" target="_blank" rel="noopener" class="text-accent text-sm hover:underline">
+ <i class="fas fa-external-link-alt"></i> trafikverket.se/.../uppdaterad-tidplanering-presenteras/
+ </a>
+ </div>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-blue-500 mb-4">
+ <div class="flex items-start justify-between mb-3">
+ <div>
+ <h3 class="text-xl font-bold text-white">Projektsidan (löpande uppdaterad)</h3>
+ <p class="text-sm text-gray-400 mt-1">trafikverket.se — senast uppdaterad 31 maj 2026</p>
+ </div>
+ <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded uppercase whitespace-nowrap">Officiellt</span>
+ </div>
+ <p class="text-gray-300 mb-3">
+ Den officiella projektsidan. Innehåller veckovis uppdaterad information om pågående arbete.
+ </p>
+ <p class="text-sm text-gray-400 mb-3">
+ <strong>Nyckelfakta från sidan:</strong>
+ </p>
+ <ul class="text-sm text-gray-300 space-y-1 mb-3">
+ <li>• <strong>Sträcka:</strong> Ställdalen-Grängesberg (del av Bergslagsbanan)</li>
+ <li>• <strong>17,5 km räls, 10 spårväxlar, kontaktledning byts</strong></li>
+ <li>• <strong>Avvattning förbättras</strong>, bro Ställdalsån målas om</li>
+ <li>• <strong>Syfte:</strong> använda Silverhöjdspåret + Hörkenspåret som dubbelspår</li>
+ <li>• <strong>Vecka 24-27:</strong> tung trafik intensiv, sprängningar Ställberg, nattarbete</li>
+ <li>• <strong>Sprängningar Ställberg vecka 24</strong> — förbereder kontaktledningsfundament</li>
+ <li>• <strong>50+ lastbilar nattetid</strong> på sträckan Grängesberg-Ställdalen</li>
+ <li>• <strong>Formuleringskonflikt:</strong> "nattarbete UTANFÖR bebyggt område" — men Ställberg ÄR bebyggt</li>
+ </ul>
+ <a href="https://www.trafikverket.se/vara-projekt/projekt-i-dalarnas-lan/silverhojdsparet-sparbyte-och-upprustning/" target="_blank" rel="noopener" class="text-accent text-sm hover:underline">
+ <i class="fas fa-external-link-alt"></i> trafikverket.se/.../silverhojdsparet-sparbyte-och-upprustning/
+ </a>
+ </div>
+ </section>
+
+ <!-- BYALAG -->
+ <section class="mb-12">
+ <h2 class="text-2xl font-bold mb-6 text-accent mono">
+ <i class="fas fa-home mr-2"></i>// Byalag & Civilsamhälle
+ </h2>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-orange-500 mb-4">
+ <div class="flex items-start justify-between mb-3">
+ <div>
+ <h3 class="text-xl font-bold text-white">Ställbergs Byalag — Möte med Trafikverket</h3>
+ <p class="text-sm text-gray-400 mt-1">15 februari 2026 (ca) — Mötesrapport av Anders Carlsson</p>
+ </div>
+ <span class="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded uppercase whitespace-nowrap">Kritik</span>
+ </div>
+ <p class="text-gray-300 mb-3">
+ Ställbergs Byalag (ca 40 deltagare) hade informationsmöte med Trafikverket. <strong>Kritik framfördes</strong> om hur projektet skötts. Trafikverket "säger sig tagit till sig" kritiken.
+ </p>
+ <blockquote class="border-l-4 border-accent pl-4 italic bg-card p-3 rounded-r-lg mb-3 text-sm">
+ "Där synpunkter kom fram om hur det hela har skötts. En kritik som man säger sig tagit till sig."
+ <span class="block text-xs text-gray-500 mt-1 not-italic">— Mötesrapport, Ställbergs Byalag</span>
+ </blockquote>
+ <blockquote class="border-l-4 border-accent pl-4 italic bg-card p-3 rounded-r-lg mb-3 text-sm">
+ "Stående närmast kameran ser ni Fredrik Arwehed som också berättade det mesta om projektet."
+ <span class="block text-xs text-gray-500 mt-1 not-italic">— Mötesrapport, Ställbergs Byalag (Anders Carlsson)</span>
+ </blockquote>
+ <p class="text-sm text-gray-400 mb-3">
+ <strong>Betydelse:</strong> Offentlig dokumentation av kritik. Foto av Fredrik Arwehed. Trafikverket har gett ett formellt svar.
+ </p>
+ <p class="text-sm text-gray-400 mb-3">
+ <strong>Kontakt i byalaget:</strong> Josefine 0706573512
+ </p>
+ <a href="https://stallbergsbyalag.se/author/admin/" target="_blank" rel="noopener" class="text-accent text-sm hover:underline">
+ <i class="fas fa-external-link-alt"></i> stallbergsbyalag.se/author/admin/
+ </a>
+ </div>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-orange-500 mb-4">
+ <div class="flex items-start justify-between mb-3">
+ <div>
+ <h3 class="text-xl font-bold text-white">Ställdalens Byalag (Facebook-grupp)</h3>
+ <p class="text-sm text-gray-400 mt-1">Aktiv Facebook-grupp — Jan Christians postar regelbundet</p>
+ </div>
+ <span class="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded uppercase whitespace-nowrap">Sociala medier</span>
+ </div>
+ <p class="text-gray-300 mb-3">
+ Aktiv Facebook-grupp där Jan Christians (delprojektledare) regelbundet postar uppdateringar om projektet. Inläggen är öppna och informativa.
+ </p>
+ <blockquote class="border-l-4 border-accent pl-4 italic bg-card p-3 rounded-r-lg mb-3 text-sm">
+ "Till helgen börjar Trafikverkets entreprenör med omfattande schaktarbeten i Ställdalen. Mer information finns på Trafikverkets [hemsida]"
+ <span class="block text-xs text-gray-500 mt-1 not-italic">— Jan Christians, Ställdalens Byalag (Facebook), 3 veckor sedan</span>
+ </blockquote>
+ <p class="text-sm text-gray-400 mb-3">
+ <strong>Betydelse:</strong> Jan använder sociala medier aktivt för att informera boende. Detta är en bra direktkontakt för operativa frågor.
+ </p>
+ <a href="https://www.facebook.com/groups/377289885646570/" target="_blank" rel="noopener" class="text-accent text-sm hover:underline">
+ <i class="fas fa-external-link-alt"></i> facebook.com/groups/377289885646570/
+ </a>
+ </div>
+ </section>
+
+ <!-- DIVA / OFFENTLIGA HANDLINGAR -->
+ <section class="mb-12">
+ <h2 class="text-2xl font-bold mb-6 text-accent mono">
+ <i class="fas fa-file-alt mr-2"></i>// Offentliga dokument
+ </h2>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-purple-500 mb-4">
+ <div class="flex items-start justify-between mb-3">
+ <div>
+ <h3 class="text-xl font-bold text-white">Åtgärdsvalsstudie – Ostkustbanan</h3>
+ <p class="text-sm text-gray-400 mt-1">DiVA portal diva2:1364112 — Publikt dokument</p>
+ </div>
+ <span class="bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded uppercase whitespace-nowrap">Dokument</span>
+ </div>
+ <p class="text-gray-300 mb-3">
+ Publik utredning där Fredrik Arwehed är medförfattare tillsammans med Ramböll och WSP. Visar att han har erfarenhet av stora järnvägsutredningar.
+ </p>
+ <p class="text-sm text-gray-400 mb-3">
+ <strong>Medverkande:</strong> Fredrik Arwehed (Trafikverket), Göran Hörnell (Ramböll), Charlotta Fredriksson (WSP), Malin [okänt]
+ </p>
+ <a href="https://www.diva-portal.org/smash/get/diva2:1364112/FULLTEXT01.pdf" target="_blank" rel="noopener" class="text-accent text-sm hover:underline">
+ <i class="fas fa-external-link-alt"></i> diva-portal.org/smash/get/diva2:1364112/FULLTEXT01.pdf
+ </a>
+ </div>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-purple-500 mb-4">
+ <div class="flex items-start justify-between mb-3">
+ <div>
+ <h3 class="text-xl font-bold text-white">Riskutredning Oberget (Borlänge kommun)</h3>
+ <p class="text-sm text-gray-400 mt-1">18 augusti 2025 — PDF</p>
+ </div>
+ <span class="bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded uppercase whitespace-nowrap">Dokument</span>
+ </div>
+ <p class="text-gray-300 mb-3">
+ Riskutredning för Oberget där Jan Christians anges som granskare.
+ </p>
+ <a href="https://www.borlange.se/download/18.3e270d6e198616773aa24061/1755503975575/Riskutredning.pdf" target="_blank" rel="noopener" class="text-accent text-sm hover:underline">
+ <i class="fas fa-external-link-alt"></i> borlange.se/download/18.3e270d6e198616773aa24061/1755503975575/Riskutredning.pdf
+ </a>
+ </div>
+ </section>
+
+ <!-- SPÅRTID -->
+ <section class="mb-12">
+ <h2 class="text-2xl font-bold mb-6 text-accent mono">
+ <i class="fas fa-running mr-2"></i>// Sport / Övrigt
+ </h2>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-yellow-500 mb-4">
+ <div class="flex items-start justify-between mb-3">
+ <div>
+ <h3 class="text-xl font-bold text-white">Vårruset Gävle 2026 (Racetimer.se)</h3>
+ <p class="text-sm text-gray-400 mt-1">2026 — Löpartävling</p>
+ </div>
+ <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded uppercase whitespace-nowrap">Verifiering</span>
+ </div>
+ <p class="text-gray-300 mb-3">
+ Resultatlista som verifierar Christine Ekbäcks namn, ålder (1986), hemort (Sandviken) och arbetsgivare (Trafikverket). Hon sprang 5 km på 30:46.
+ </p>
+ <a href="https://www.racetimer.se/sv/race/resultlist/6834?checkpoint=9999&layout=marathon&page=2&rc_id=26674" target="_blank" rel="noopener" class="text-accent text-sm hover:underline">
+ <i class="fas fa-external-link-alt"></i> racetimer.se/sv/race/resultlist/6834
+ </a>
+ </div>
+ </section>
+
+ </main>
+
+ <footer class="border-t border-gray-900 py-8 text-center text-gray-600 text-sm mt-20">
+ <p class="mb-2">
+ <a href="index.html" class="hover:text-accent transition-colors">
+ <i class="fas fa-arrow-left mr-1"></i>Tillbaka till Startsida
+ </a>
+ |
+ <a href="karta.html" class="hover:text-accent transition-colors">
+ <i class="fas fa-project-diagram mr-1"></i>Detektiv-Karta
+ </a>
+ |
+ <a href="personer.html" class="hover:text-accent transition-colors">
+ <i class="fas fa-users mr-1"></i>Personregister
+ </a>
+ </p>
+ <p>Pressklipp — internt arbetsverktyg.</p>
+ </footer>
+
+</body>
+</html>
