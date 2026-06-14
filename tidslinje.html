@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Tidslinje — Silverhöjdspåret</title>
+
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Fira Code', 'monospace'] },
+ colors: { dark: '#0f172a', darker: '#020617', accent: '#eab308', danger: '#ef4444', card: '#1e293b' }
+ }
+ }
+ }
+ </script>
+ <style>
+ body { background-color: #020617; color: #f8fafc; }
+ .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+ .timeline { position: relative; padding-left: 2.5rem; }
+ .timeline::before {
+ content: '';
+ position: absolute;
+ left: 0.75rem;
+ top: 0;
+ bottom: 0;
+ width: 2px;
+ background: linear-gradient(to bottom, #eab308, rgba(234, 179, 8, 0.1));
+ }
+ .timeline-item { position: relative; margin-bottom: 2rem; }
+ .timeline-item::before {
+ content: '';
+ position: absolute;
+ left: -2.1rem;
+ top: 0.5rem;
+ width: 1rem;
+ height: 1rem;
+ border-radius: 50%;
+ background: #eab308;
+ border: 2px solid #020617;
+ box-shadow: 0 0 0 2px #eab308;
+ }
+ .timeline-future::before { background: #475569; box-shadow: 0 0 0 2px #475569; }
+ </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-darker">
+
+ <nav class="fixed w-full z-50 glass-panel border-b border-gray-800">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-16">
+ <div class="flex items-center gap-2">
+ <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+ <i class="fas fa-arrow-left text-accent text-xl"></i>
+ <span class="font-bold text-xl tracking-tight text-white">Startsida</span>
+ </a>
+ </div>
+ <div class="text-sm text-gray-400">
+ <i class="fas fa-clock text-accent"></i>
+ <span class="ml-1">Tidslinje</span>
+ </div>
+ </div>
+ </div>
+ </nav>
+
+ <main class="pt-24 pb-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+ <section class="mb-12">
+ <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-accent text-sm font-semibold mb-6">
+ <i class="fas fa-clock"></i>
+ Kronologi
+ </div>
+ <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+ Tidslinje <br>
+ <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-200">Silverhöjdspåret</span>
+ </h1>
+ <p class="mt-4 max-w-3xl text-lg text-gray-300">
+ Alla händelser kronologiskt — från beslut till byggnation. Med källa, datum och betydelse.
+ </p>
+ </section>
+
+ <section class="mb-12">
+ <div class="timeline">
+
+ <div class="timeline-item">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-accent font-mono mb-1">2024</div>
+ <h3 class="text-lg font-bold mb-2">Projektering, planering, upphandling</h3>
+ <p class="text-sm text-gray-300 mb-2">Trafikverket arbetar med att planera genomförandet och projektera för flera olika entreprenader.</p>
+ <p class="text-xs text-gray-400">Källa: <a href="https://www.trafikverket.se/vara-projekt/projekt-i-dalarnas-lan/silverhojdsparet-sparbyte-och-upprustning/" class="text-accent hover:underline" target="_blank" rel="noopener">Trafikverket huvudsida</a></p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-accent font-mono mb-1">2025-08-18</div>
+ <h3 class="text-lg font-bold mb-2">Jan Christians granskar Riskutredning Oberget</h3>
+ <p class="text-sm text-gray-300 mb-2">Borlänge kommun PDF. Visar att Jan redan har kompetens inom riskutredning/trafikflöden.</p>
+ <p class="text-xs text-gray-400">Källa: <a href="https://www.borlange.se/download/18.3e270d6e198616773aa24061/1755503975575/Riskutredning.pdf" class="text-accent hover:underline" target="_blank" rel="noopener">borlange.se Riskutredning</a></p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-accent font-mono mb-1">2025-11-06</div>
+ <h3 class="text-lg font-bold mb-2">Trafikverket-möte i Ställberg (info-träff)</h3>
+ <p class="text-sm text-gray-300 mb-2">Ställbergs Byalag nämner "Info av Trafikverket 6/11 kl 18.00". Tidigt informationsmöte.</p>
+ <p class="text-xs text-gray-400">Källa: <a href="https://stallbergsbyalag.se/author/admin/" class="text-accent hover:underline" target="_blank" rel="noopener">stallbergsbyalag.se</a></p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-accent font-mono mb-1">2026-02-15 (ca)</div>
+ <h3 class="text-lg font-bold mb-2">Möte mellan Ställbergs Byalag och Trafikverket</h3>
+ <p class="text-sm text-gray-300 mb-2">Ca 40 deltagare. Kritik framfördes. Trafikverket "säger sig tagit till sig" kritiken. Mötesrapport av Anders Carlsson.</p>
+ <p class="text-xs text-gray-400">Källa: <a href="https://stallbergsbyalag.se/author/admin/" class="text-accent hover:underline" target="_blank" rel="noopener">stallbergsbyalag.se</a></p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-accent font-mono mb-1">2026-03-10</div>
+ <h3 class="text-lg font-bold mb-2">Trafikverket nyhet: "Uppdaterad tidplanering presenteras"</h3>
+ <p class="text-sm text-gray-300 mb-2">Fredrik Arwehed citeras. Avslöjar 24/7-arbete och avstängning 20 april - 2 augusti. 8 nya spårväxlar (4 Ställdalen, 4 Grängesberg).</p>
+ <p class="text-xs text-gray-400">Källa: <a href="https://www.trafikverket.se/vara-projekt/projekt-i-dalarnas-lan/silverhojdsparet-sparbyte-och-upprustning/nyheter/2026/uppdaterad-tidplanering-presenteras/" class="text-accent hover:underline" target="_blank" rel="noopener">trafikverket.se nyhet 2026-03-10</a></p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-accent font-mono mb-1">2026-04-20</div>
+ <h3 class="text-lg font-bold mb-2">PROJEKTSTART — Spårbytet börjar på allvar</h3>
+ <p class="text-sm text-gray-300 mb-2">All tågtrafik stoppad vecka 17-31. Byggsäsong inleds.</p>
+ <p class="text-xs text-gray-400">Källa: Trafikverket huvudsida</p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-accent font-mono mb-1">2026-05-22 till 31</div>
+ <h3 class="text-lg font-bold mb-2">MEST INTENSIVA PERIODEN — båda spåren stängda</h3>
+ <p class="text-sm text-gray-300 mb-2">Vecka 22 + 25-31. Både Silverhöjdspåret OCH Hörkenspåret stängt för all trafik. 8 nya spårväxlar läggs. Dygnet-runt-arbete.</p>
+ <p class="text-xs text-gray-400">Källa: Trafikverket nyhet 2026-03-10</p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-accent font-mono mb-1">2026-05-30</div>
+ <h3 class="text-lg font-bold mb-2">NLT publicerar: "200 miljoner på 168 timmar"</h3>
+ <p class="text-sm text-gray-300 mb-2">Foto av Fredrik Arwehed. Avslöjar storleken på den intensiva veckan. Hela projektet i miljard-klass.</p>
+ <p class="text-xs text-gray-400">Källa: <a href="https://www.nyaludvikatidning.se/200-miljoner-pa-168-timmar-planerat-i-tre-ar/" class="text-accent hover:underline" target="_blank" rel="noopener">nyaludvikatidning.se</a></p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="glass-panel p-5 rounded-xl border-l-4 border-l-red-500">
+ <div class="text-xs text-red-400 font-mono mb-1">2026-06-10 till 27 (ca)</div>
+ <h3 class="text-lg font-bold mb-2">Vecka 24-27: SPRÄNGNINGAR + NATTRAFIK INTENSIV</h3>
+ <p class="text-sm text-gray-300 mb-2">"Mindre antal sprängningar i Ställberg" (vecka 24). 50+ lastbilar nattetid. <strong class="text-accent">Ställberg-boende påverkas direkt.</strong></p>
+ <p class="text-xs text-gray-400">Källa: Trafikverket huvudsida</p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-accent font-mono mb-1">2026-06-14 (IDAG)</div>
+ <h3 class="text-lg font-bold mb-2">Projektet fortsätter — detektivarbetet inleds</h3>
+ <p class="text-sm text-gray-300 mb-2">Mr. Splendid inleder forskning kring projektet. Skapar kontakt med Länsstyrelsen Dalarna. Bygger detektiv-karta.</p>
+ </div>
+ </div>
+
+ <div class="timeline-item timeline-future">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-gray-400 font-mono mb-1">2026-08-02</div>
+ <h3 class="text-lg font-bold mb-2 text-gray-400">Trafiken återupptas (preliminärt)</h3>
+ <p class="text-sm text-gray-500 mb-2">Avstängning 15 veckor avslutas.</p>
+ <p class="text-xs text-gray-500">Källa: Trafikverket nyhet 2026-03-10</p>
+ </div>
+ </div>
+
+ <div class="timeline-item timeline-future">
+ <div class="glass-panel p-5 rounded-xl">
+ <div class="text-xs text-gray-400 font-mono mb-1">Hösten 2026</div>
+ <h3 class="text-lg font-bold mb-2 text-gray-400">Efterarbeten</h3>
+ <p class="text-sm text-gray-500 mb-2">Slutförande av entreprenaden.</p>
+ <p class="text-xs text-gray-500">Källa: Trafikverket nyhet 2026-03-10</p>
+ </div>
+ </div>
+
+ </div>
+ </section>
+
+ </main>
+
+ <footer class="border-t border-gray-900 py-8 text-center text-gray-600 text-sm mt-20">
+ <p class="mb-2">
+ <a href="index.html" class="hover:text-accent transition-colors">
+ <i class="fas fa-arrow-left mr-1"></i>Tillbaka till Startsida
+ </a>
+ |
+ <a href="karta.html" class="hover:text-accent transition-colors">
+ <i class="fas fa-project-diagram mr-1"></i>Detektiv-Karta
+ </a>
+ </p>
+ <p>Tidslinje — internt arbetsverktyg.</p>
+ </footer>
+
+</body>
+</html>
