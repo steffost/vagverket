@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Detektiv-Karta — Silverhöjdspåret</title>
+
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ fontFamily: {
+ sans: ['Inter', 'sans-serif'],
+ mono: ['Fira Code', 'monospace'],
+ },
+ colors: {
+ dark: '#0f172a',
+ darker: '#020617',
+ accent: '#eab308',
+ danger: '#ef4444',
+ card: '#1e293b',
+ node: '#0e7490',
+ person: '#7c3aed',
+ authority: '#059669',
+ media: '#dc2626',
+ community: '#ea580c'
+ }
+ }
+ }
+ }
+ </script>
+ <style>
+ body {
+ background-color: #020617;
+ color: #f8fafc;
+ }
+ .glass-panel {
+ background: rgba(30, 41, 59, 0.7);
+ backdrop-filter: blur(10px);
+ border: 1px solid rgba(255, 255, 255, 0.1);
+ }
+ .node {
+ position: relative;
+ transition: all 0.3s ease;
+ }
+ .node:hover {
+ transform: scale(1.05);
+ box-shadow: 0 0 30px rgba(234, 179, 8, 0.3);
+ }
+ .connection {
+ stroke: rgba(234, 179, 8, 0.3);
+ stroke-width: 2;
+ stroke-dasharray: 5,5;
+ fill: none;
+ }
+ .connection-strong {
+ stroke: rgba(234, 179, 8, 0.7);
+ stroke-width: 3;
+ fill: none;
+ }
+ .pulse-yellow {
+ animation: pulse-yellow 2s infinite;
+ }
+ @keyframes pulse-yellow {
+ 0% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.4); }
+ 70% { box-shadow: 0 0 0 15px rgba(234, 179, 8, 0); }
+ 100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); }
+ }
+ </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-darker">
+
+ <nav class="fixed w-full z-50 glass-panel border-b border-gray-800">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-16">
+ <div class="flex items-center gap-2">
+ <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+ <i class="fas fa-arrow-left text-accent text-xl"></i>
+ <span class="font-bold text-xl tracking-tight text-white">Startsida</span>
+ </a>
+ </div>
+ <div class="text-sm text-gray-400">
+ <i class="fas fa-project-diagram text-accent"></i>
+ <span class="ml-1">Detektiv-Karta</span>
+ </div>
+ </div>
+ </div>
+ </nav>
+
+ <main class="pt-24 pb-12">
+
+ <!-- HEADER -->
+ <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+ <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-accent text-sm font-semibold mb-6">
+ <i class="fas fa-search"></i>
+ Detektiv-analys
+ </div>
+ <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+ Nätverkskarta över <br>
+ <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-200">Silverhöjdspåret-projektet</span>
+ </h1>
+ <p class="mt-4 max-w-3xl text-lg text-gray-300">
+ En visuell kartläggning av <strong>personer, organisationer, kontakter och händelser</strong> som formar projektet. Allt är publikt verifierad information. Informationen är ett levande dokument — uppdateras löpande.
+ </p>
+ <p class="mt-2 text-sm text-gray-500">
+ <i class="fas fa-info-circle"></i> Senast uppdaterad: 2026-06-14 19:43
+ </p>
+ </section>
+
+ <!-- NYCKELPERSONER -->
+ <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+ <h2 class="text-2xl font-bold mb-6 mono text-accent">
+ <i class="fas fa-users mr-2"></i>// Nyckelpersoner
+ </h2>
+
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+ <!-- FREDRIK -->
+ <div class="node glass-panel p-6 rounded-xl border-t-4 border-t-blue-500 pulse-yellow">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-16 h-16 rounded-full bg-blue-900/50 flex items-center justify-center text-blue-300 text-3xl">
+ <i class="fas fa-user-tie"></i>
+ </div>
+ <div>
+ <h3 class="text-xl font-bold">Fredrik Arwehed</h3>
+ <p class="text-sm text-blue-300">Projektledare</p>
+ </div>
+ </div>
+ <div class="space-y-2 text-sm">
+ <div><i class="fas fa-building text-gray-500 mr-2"></i><strong>Trafikverket</strong> (konsult via Arwone Consulting)</div>
+ <div><i class="fas fa-map-marker-alt text-gray-500 mr-2"></i>Gävle-baserad</div>
+ <div><i class="fas fa-graduation-cap text-gray-500 mr-2"></i>Högskolan Dalarna</div>
+ <div><i class="fas fa-phone text-gray-500 mr-2"></i><a href="tel:0701683665" class="text-accent">070-168 36 65</a></div>
+ </div>
+ <div class="mt-4 pt-4 border-t border-gray-700">
+ <p class="text-xs text-gray-400 mb-2"><strong>Profil:</strong></p>
+ <ul class="text-xs space-y-1 text-gray-300">
+ <li>• Tidigare Trafikverket 2013-2014</li>
+ <li>• Medförfattare Åtgärdsvalsstudie Ostkustbanan</li>
+ <li>• Citerad i NLT + Trafikverket-nyheter</li>
+ <li>• Möte med Ställbergs Byalag (40 pers)</li>
+ </ul>
+ </div>
+ <div class="mt-4 pt-4 border-t border-gray-700">
+ <p class="text-xs text-gray-400 mb-1"><strong>Detektiv-notering:</strong></p>
+ <p class="text-xs text-gray-300 italic">Formell talesperson. Möter boende i grupp. Bra på att svara retoriskt ("tack för tålamodet").</p>
+ </div>
+ <div class="mt-3">
+ <a href="personer.html" class="text-xs text-accent hover:underline">
+ <i class="fas fa-external-link-alt"></i> Fullständigt personkort
+ </a>
+ </div>
+ </div>
+
+ <!-- JAN -->
+ <div class="node glass-panel p-6 rounded-xl border-t-4 border-t-green-500 pulse-yellow">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-16 h-16 rounded-full bg-green-900/50 flex items-center justify-center text-green-300 text-3xl">
+ <i class="fas fa-user-cog"></i>
+ </div>
+ <div>
+ <h3 class="text-xl font-bold">Jan Christians</h3>
+ <p class="text-sm text-green-300">Delprojektledare</p>
+ </div>
+ </div>
+ <div class="space-y-2 text-sm">
+ <div><i class="fas fa-building text-gray-500 mr-2"></i><strong>Trafikverket</strong></div>
+ <div><i class="fas fa-map-marker-alt text-gray-500 mr-2"></i>Bor i Torsång, Borlänge</div>
+ <div><i class="fas fa-car text-gray-500 mr-2"></i>Racerförare (Austin A40 1961)</div>
+ <div><i class="fas fa-phone text-gray-500 mr-2"></i><a href="tel:0706798990" class="text-accent">070-679 89 90</a></div>
+ </div>
+ <div class="mt-4 pt-4 border-t border-gray-700">
+ <p class="text-xs text-gray-400 mb-2"><strong>Profil:</strong></p>
+ <ul class="text-xs space-y-1 text-gray-300">
+ <li>• Född ca 1960 (65-66 år)</li>
+ <li>• Tidigare 350-miljonersprojekt (Projektledarbyrån)</li>
+ <li>• Riskutredning Oberget (Borlänge kommun)</li>
+ <li>• AKTIV på Ställdalens Byalag Facebook</li>
+ <li>• Tränar racing på Grängesbergs övningsbana (!)</li>
+ </ul>
+ </div>
+ <div class="mt-4 pt-4 border-t border-gray-700">
+ <p class="text-xs text-gray-400 mb-1"><strong>Detektiv-notering:</strong></p>
+ <p class="text-xs text-gray-300 italic">Operativ. Talar öppet med boende. Bor LOKALT. Tränar i området. Bästa kontakten för operativa frågor.</p>
+ </div>
+ <div class="mt-3">
+ <a href="personer.html" class="text-xs text-accent hover:underline">
+ <i class="fas fa-external-link-alt"></i> Fullständigt personkort
+ </a>
+ </div>
+ </div>
+
+ <!-- CHRISTINE -->
+ <div class="node glass-panel p-6 rounded-xl border-t-4 border-t-purple-500 pulse-yellow">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-16 h-16 rounded-full bg-purple-900/50 flex items-center justify-center text-purple-300 text-3xl">
+ <i class="fas fa-user-graduate"></i>
+ </div>
+ <div>
+ <h3 class="text-xl font-bold">Christine Ekbäck</h3>
+ <p class="text-sm text-purple-300">Projektingenjör</p>
+ </div>
+ </div>
+ <div class="space-y-2 text-sm">
+ <div><i class="fas fa-building text-gray-500 mr-2"></i><strong>Trafikverket</strong></div>
+ <div><i class="fas fa-map-marker-alt text-gray-500 mr-2"></i>Sandviken-baserad</div>
+ <div><i class="fas fa-birthday-cake text-gray-500 mr-2"></i>Född 1986 (ca 40 år)</div>
+ <div><i class="fas fa-phone text-gray-500 mr-2"></i><a href="tel:+46101230624" class="text-accent">+46 10-123 06 24</a></div>
+ </div>
+ <div class="mt-4 pt-4 border-t border-gray-700">
+ <p class="text-xs text-gray-400 mb-2"><strong>Profil:</strong></p>
+ <ul class="text-xs space-y-1 text-gray-300">
+ <li>• Verifierad via Vårruset Gävle 2026 (Racetimer)</li>
+ <li>• Teknisk kontaktpunkt (kontaktledning, sprängning, buller)</li>
+ <li>• Ca 10-15 års erfarenhet (rimlig ålder)</li>
+ </ul>
+ </div>
+ <div class="mt-4 pt-4 border-t border-gray-700">
+ <p class="text-xs text-gray-400 mb-1"><strong>Detektiv-notering:</strong></p>
+ <p class="text-xs text-gray-300 italic">Bäst att kontakta om TEKNISKA detaljer. Inte kommunikativ på samma sätt som Jan/Fredrik. Förmodligen mer sakkunnig.</p>
+ </div>
+ <div class="mt-3">
+ <a href="personer.html" class="text-xs text-accent hover:underline">
+ <i class="fas fa-external-link-alt"></i> Fullständigt personkort
+ </a>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- ORGANISATIONER -->
+ <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+ <h2 class="text-2xl font-bold mb-6 mono text-accent">
+ <i class="fas fa-landmark mr-2"></i>// Organisationer & Myndigheter
+ </h2>
+
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-blue-500">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-hard-hat text-blue-400 text-xl"></i>
+ <h3 class="font-bold">Trafikverket</h3>
+ </div>
+ <p class="text-xs text-gray-400">Beställare & byggherre</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Kritiserad av Riksrevisionen för bristande beställarkompetens</p>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-green-500">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-leaf text-green-400 text-xl"></i>
+ <h3 class="font-bold">Länsstyrelsen Dalarna</h3>
+ </div>
+ <p class="text-xs text-gray-400">Tillsyn enligt miljöbalken</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Godkänner MKB. Beslutar om miljötillstånd. Tillstyrker fastställelse.</p>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-purple-500">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-city text-purple-400 text-xl"></i>
+ <h3 class="font-bold">Ludvika kommun</h3>
+ </div>
+ <p class="text-xs text-gray-400">Lokal tillsyn (Grängesberg)</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Bygglov, detaljplaner, lokala miljöfrågor</p>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-red-500">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-balance-scale text-red-400 text-xl"></i>
+ <h3 class="font-bold">Mark- och miljödomstol</h3>
+ </div>
+ <p class="text-xs text-gray-400">Överklagande av miljöbeslut</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Prövar tillstånd och överklaganden</p>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-accent">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-gavel text-yellow-400 text-xl"></i>
+ <h3 class="font-bold">JO (Justitieombudsmannen)</h3>
+ </div>
+ <p class="text-xs text-gray-400">Klagomål mot myndighet</p>
+ <p class="text-xs text-gray-500 mt-1 italic">08-786 51 00 / jo.se/anmala/</p>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-cyan-500">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-building text-cyan-400 text-xl"></i>
+ <h3 class="font-bold">Trafikverket Juridik</h3>
+ </div>
+ <p class="text-xs text-gray-400">Planprövning & fastställelse</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Fattar slutgiltigt beslut om järnvägsplan</p>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-pink-500">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-globe-europe text-pink-400 text-xl"></i>
+ <h3 class="font-bold">EU-kommissionen</h3>
+ </div>
+ <p class="text-xs text-gray-400">EU-rätt (miljödirektiv)</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Om EU-regler överträtts (TEN-T m.fl.)</p>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-amber-500">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-landmark text-amber-400 text-xl"></i>
+ <h3 class="font-bold">Riksrevisionen</h3>
+ </div>
+ <p class="text-xs text-gray-400">Granskning av statliga myndigheter</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Har granskat Trafikverket — fann brister</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- BOENDE & MEDIA -->
+ <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+ <h2 class="text-2xl font-bold mb-6 mono text-accent">
+ <i class="fas fa-users mr-2"></i>// Boende-nätverk & Media
+ </h2>
+
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-community">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-home text-orange-400 text-xl"></i>
+ <h3 class="font-bold">Ställbergs Byalag</h3>
+ </div>
+ <p class="text-xs text-gray-400">Aktiv byalag i Ställberg</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Möte med Trafikverket (40 pers). Dokumenterade kritik. Josefine 0706573512</p>
+ <a href="https://stallbergsbyalag.se/" target="_blank" class="text-xs text-accent hover:underline">stallbergsbyalag.se →</a>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-community">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fab fa-facebook text-orange-400 text-xl"></i>
+ <h3 class="font-bold">Ställdalens Byalag</h3>
+ </div>
+ <p class="text-xs text-gray-400">Facebook-grupp (Ställdalen)</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Jan Christians postar där. Aktiv dialog med boende.</p>
+ <a href="https://www.facebook.com/groups/377289885646570/" target="_blank" class="text-xs text-accent hover:underline">facebook.com →</a>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-media">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-newspaper text-red-400 text-xl"></i>
+ <h3 class="font-bold">Nya Ludvika Tidning</h3>
+ </div>
+ <p class="text-xs text-gray-400">Lokal media, bevakar projektet</p>
+ <p class="text-xs text-gray-500 mt-1 italic">"200 miljoner på 168 timmar" + bild av Fredrik</p>
+ <a href="https://www.nyaludvikatidning.se/" target="_blank" class="text-xs text-accent hover:underline">nyaludvikatidning.se →</a>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-media">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-newspaper text-red-400 text-xl"></i>
+ <h3 class="font-bold">Dalademokraten</h3>
+ </div>
+ <p class="text-xs text-gray-400">Borlänge-tidning</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Artikel om Jan Christians 2015 (Austin A40) — avslöjar personprofil</p>
+ </div>
+
+ <div class="node glass-panel p-4 rounded-xl border-l-4 border-l-media">
+ <div class="flex items-center gap-2 mb-2">
+ <i class="fas fa-tv text-red-400 text-xl"></i>
+ <h3 class="font-bold">SVT/SR Dalarna</h3>
+ </div>
+ <p class="text-xs text-gray-400">Rikstäckande media Dalarna-redaktioner</p>
+ <p class="text-xs text-gray-500 mt-1 italic">Inga artiklar hittade ännu — kontakta tips-redaktion</p>
+ </div>
+
+ </div>
+ </section>
+
+ <!-- HÄNDELSER & BEVIS -->
+ <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+ <h2 class="text-2xl font-bold mb-6 mono text-accent">
+ <i class="fas fa-list-ul mr-2"></i>// Händelser & Bevis
+ </h2>
+
+ <div class="space-y-3">
+ <div class="glass-panel p-4 rounded-lg border-l-4 border-l-red-500 flex items-start gap-3">
+ <div class="bg-red-900/50 px-2 py-1 rounded text-red-300 text-xs font-bold whitespace-nowrap">PÅGÅR</div>
+ <div class="flex-1">
+ <p class="text-sm"><strong>Sprängningar i Ställberg</strong> — vecka 24, förbereder kontaktledningsfundament</p>
+ <p class="text-xs text-gray-400">Källa: Trafikverket huvudsida. <span class="text-accent">Mr. Splendid bor här.</span></p>
+ </div>
+ </div>
+
+ <div class="glass-panel p-4 rounded-lg border-l-4 border-l-red-500 flex items-start gap-3">
+ <div class="bg-red-900/50 px-2 py-1 rounded text-red-300 text-xs font-bold whitespace-nowrap">PÅGÅR</div>
+ <div class="flex-1">
+ <p class="text-sm"><strong>50+ lastbilar, nattetid</strong> — "intensiv tung trafik" på sträckan Grängesberg-Ställdalen</p>
+ <p class="text-xs text-gray-400">Källa: Trafikverket huvudsida. <span class="text-accent">Boende påverkas dygnet runt.</span></p>
+ </div>
+ </div>
+
+ <div class="glass-panel p-4 rounded-lg border-l-4 border-l-orange-500 flex items-start gap-3">
+ <div class="bg-orange-900/50 px-2 py-1 rounded text-orange-300 text-xs font-bold whitespace-nowrap">2026-05-30</div>
+ <div class="flex-1">
+ <p class="text-sm"><strong>200 miljoner / 168 timmar</strong> — NLT artikel om den intensiva byggveckan</p>
+ <p class="text-xs text-gray-400">Källa: Nya Ludvika Tidning. Foto av Fredrik Arwehed.</p>
+ </div>
+ </div>
+
+ <div class="glass-panel p-4 rounded-lg border-l-4 border-l-yellow-500 flex items-start gap-3">
+ <div class="bg-yellow-900/50 px-2 py-1 rounded text-yellow-300 text-xs font-bold whitespace-nowrap">2026-04-20</div>
+ <div class="flex-1">
+ <p class="text-sm"><strong>Projektstart</strong> — Arbete inleds på allvar, all tågtrafik stoppad vecka 17-31</p>
+ <p class="text-xs text-gray-400">Källa: Trafikverket huvudsida.</p>
+ </div>
+ </div>
+
+ <div class="glass-panel p-4 rounded-lg border-l-4 border-l-yellow-500 flex items-start gap-3">
+ <div class="bg-yellow-900/50 px-2 py-1 rounded text-yellow-300 text-xs font-bold whitespace-nowrap">2026-03-10</div>
+ <div class="flex-1">
+ <p class="text-sm"><strong>Uppdaterad tidplanering presenteras</strong> — Fredrik Arwehed citerad i Trafikverket-nyhet</p>
+ <p class="text-xs text-gray-400">Källa: trafikverket.se nyheter 2026.</p>
+ </div>
+ </div>
+
+ <div class="glass-panel p-4 rounded-lg border-l-4 border-l-orange-500 flex items-start gap-3">
+ <div class="bg-orange-900/50 px-2 py-1 rounded text-orange-300 text-xs font-bold whitespace-nowrap">2026-02-15</div>
+ <div class="flex-1">
+ <p class="text-sm"><strong>Ställbergs Byalag möte med Trafikverket</strong> — 40 deltagare, kritik framfördes, Trafikverket "tagit till sig"</p>
+ <p class="text-xs text-gray-400">Källa: stallbergsbyalag.se. Anders Carlsson refererar.</p>
+ </div>
+ </div>
+
+ <div class="glass-panel p-4 rounded-lg border-l-4 border-l-gray-500 flex items-start gap-3">
+ <div class="bg-gray-700/50 px-2 py-1 rounded text-gray-300 text-xs font-bold whitespace-nowrap">2025-08-18</div>
+ <div class="flex-1">
+ <p class="text-sm"><strong>Jan Christians granskar Riskutredning Oberget</strong> (Borlänge kommun PDF)</p>
+ <p class="text-xs text-gray-400">Källa: borlange.se Riskutredning PDF.</p>
+ </div>
+ </div>
+
+ <div class="glass-panel p-4 rounded-lg border-l-4 border-l-gray-500 flex items-start gap-3">
+ <div class="bg-gray-700/50 px-2 py-1 rounded text-gray-300 text-xs font-bold whitespace-nowrap">2024</div>
+ <div class="flex-1">
+ <p class="text-sm"><strong>Projektering, planering, flera entreprenader förbereds</strong></p>
+ <p class="text-xs text-gray-400">Källa: Trafikverket huvudsida.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- NYCKELRELATIONER -->
+ <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+ <h2 class="text-2xl font-bold mb-6 mono text-accent">
+ <i class="fas fa-link mr-2"></i>// Strategiska relationer & insikter
+ </h2>
+
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+ <div class="glass-panel p-5 rounded-xl">
+ <h3 class="font-bold text-accent mb-3">Vem pratar med vem</h3>
+ <ul class="space-y-2 text-sm text-gray-300">
+ <li>🔵 <strong>Fredrik ↔ Jan:</strong> Projektledare ↔ Delprojektledare (rapporterar uppåt)</li>
+ <li>🔵 <strong>Jan ↔ Ställdalens Byalag:</strong> AKTIV kommunikation (Facebook)</li>
+ <li>🟣 <strong>Jan ↔ Grängesbergs övningsbana:</strong> Tränar där privat (lokal)</li>
+ <li>🟢 <strong>Fredrik ↔ Länsstyrelsen:</strong> Formell dialog (MKB, fastställelse)</li>
+ <li>🟢 <strong>Christine ↔ Teknik:</strong> Intern teknisk specialist</li>
+ <li>🟡 <strong>Ställbergs Byalag ↔ Trafikverket:</strong> Möten, kritik framförd</li>
+ <li>🔴 <strong>Ställbergs Byalag ↔ Länsstyrelsen:</strong> Möjlig anmälningsväg</li>
+ </ul>
+ </div>
+
+ <div class="glass-panel p-5 rounded-xl">
+ <h3 class="font-bold text-accent mb-3">Detektiv-insikter</h3>
+ <ul class="space-y-2 text-sm text-gray-300">
+ <li>⚡ <strong>Jan är bästa kontakten</strong> — operativ, talar öppet, bor lokalt</li>
+ <li>⚡ <strong>Fredrik är formell talesperson</strong> — möter grupp, svarar retoriskt</li>
+ <li>⚡ <strong>Christine är teknisk</strong> — för specifika tekniska frågor</li>
+ <li>⚡ <strong>Länsstyrelsen Dalarna är NYCKEL</strong> — godkänner MKB, beslutar miljötillstånd</li>
+ <li>⚡ <strong>Ställbergs Byalag har redan kontaktstruktur</strong> — du behöver inte börja från noll</li>
+ <li>⚡ <strong>200 miljoner/vecka = miljardprojekt</strong> — motiverar journalistisk granskning</li>
+ <li>⚡ <strong>Formuleringskonflikt</strong> — "nattarbete UTANFÖR bebyggt område" men Ställberg ÄR bebyggt</li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- KARTANS KÄLLOR -->
+ <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+ <div class="bg-card border border-gray-700 p-6 rounded-xl">
+ <h3 class="text-xl font-bold mb-3 text-accent">
+ <i class="fas fa-book mr-2"></i>
+ Källförteckning
+ </h3>
+ <ul class="text-sm text-gray-400 space-y-1">
+ <li>• Trafikverket huvudsida + nyheter (silverhojdsparet-sparbyte-och-upprustning)</li>
+ <li>• Nya Ludvika Tidning 2026-05-30: "200 miljoner på 168 timmar"</li>
+ <li>• <strong>Dalademokraten 2015-05-25: "Jan Christians med lyckosam Austin A40 från 1961"</strong> (stor fynd för personprofil)</li>
+ <li>• Ställbergs Byalag (stallbergsbyalag.se) — mötesrapport</li>
+ <li>• Ställdalens Byalag (Facebook) — Jan Christians inlägg</li>
+ <li>• LinkedIn: se.linkedin.com/in/fredrik-arwehed-575a9b96</li>
+ <li>• Borlänge kommun Riskutredning Oberget (PDF)</li>
+ <li>• Länsstyrelsen Dalarna (lansstyrelsen.se/dalarna)</li>
+ <li>• Racetimer.se Vårruset Gävle 2026 (verifiering Christine Ekbäck)</li>
+ <li>• DiVA portal diva2:1364112 (Ostkustbanan-studien)</li>
+ </ul>
+ <p class="text-xs text-gray-500 mt-4">
+ <i class="fas fa-info-circle"></i> Kartan uppdateras löpande. Senast uppdaterad: 2026-06-14 19:43.
+ </p>
+ </div>
+ </section>
+
+ </main>
+
+ <footer class="border-t border-gray-900 py-8 text-center text-gray-600 text-sm mt-20">
+ <p class="mb-2">
+ <a href="index.html" class="hover:text-accent transition-colors">
+ <i class="fas fa-arrow-left mr-1"></i>Tillbaka till Startsida
+ </a>
+ |
+ <a href="personer.html" class="hover:text-accent transition-colors">
+ <i class="fas fa-users mr-1"></i>Personregister
+ </a>
+ </p>
+ <p>Detektiv-karta — internt arbetsverktyg.</p>
+ </footer>
+
+</body>
+</html>
