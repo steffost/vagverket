@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Projektledning Silverhöjdspåret — Ansvariga Personer</title>
+
+ <!-- Fonts -->
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+ <!-- Icons -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+ <!-- Tailwind CSS -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ fontFamily: {
+ sans: ['Inter', 'sans-serif'],
+ },
+ colors: {
+ dark: '#0f172a',
+ darker: '#020617',
+ accent: '#eab308',
+ danger: '#ef4444',
+ card: '#1e293b'
+ }
+ }
+ }
+ }
+ </script>
+ <style>
+ body {
+ background-color: #020617;
+ color: #f8fafc;
+ }
+ .glass-panel {
+ background: rgba(30, 41, 59, 0.7);
+ backdrop-filter: blur(10px);
+ border: 1px solid rgba(255, 255, 255, 0.1);
+ }
+ .pulse-red {
+ animation: pulse-red 2s infinite;
+ }
+ @keyframes pulse-red {
+ 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+ 70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+ 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+ }
+ .citation {
+ border-left: 4px solid #eab308;
+ padding-left: 1rem;
+ font-style: italic;
+ background: rgba(30, 41, 59, 0.5);
+ padding: 1rem;
+ border-radius: 0 0.5rem 0.5rem 0;
+ }
+ </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-darker">
+
+ <nav class="fixed w-full z-50 glass-panel border-b border-gray-800">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-16">
+ <div class="flex items-center gap-2">
+ <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+ <i class="fas fa-arrow-left text-accent text-xl"></i>
+ <span class="font-bold text-xl tracking-tight text-white">Tillbaka</span>
+ </a>
+ </div>
+ <div class="text-sm text-gray-400">
+ <i class="fas fa-search text-accent"></i>
+ <span class="ml-1">Granskning Silverhöjden</span>
+ </div>
+ </div>
+ </div>
+ </nav>
+
+ <main>
+ <section class="relative pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
+ <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-accent text-sm font-semibold mb-6">
+ <i class="fas fa-users"></i>
+ Ansvariga — Projektregister
+ </div>
+ <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+ Projektledning <br class="hidden md:block">
+ <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-200">Silverhöjdspåret</span>
+ </h1>
+ <p class="mt-4 max-w-3xl text-lg text-gray-300">
+ Tre dokumenterade kontaktpunkter på Trafikverket. All information är hämtad från <strong>publika källor</strong>: Trafikverkets egen webbplats, media, LinkedIn, offentliga möten och byalag.
+ </p>
+ <p class="mt-2 text-sm text-gray-500">
+ <i class="fas fa-info-circle"></i> Senast uppdaterad: 2026-06-14. Informationen är ett levande register — felaktigheter rättas vid påvisande.
+ </p>
+ </div>
+ </section>
+
+ <section class="py-12 bg-dark">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+ <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+ <!-- FREDRIK ARWEHED -->
+ <div class="glass-panel p-6 rounded-xl border-t-4 border-t-blue-500">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-14 h-14 rounded-full bg-blue-900/50 flex items-center justify-center text-blue-300 text-2xl">
+ <i class="fas fa-user-tie"></i>
+ </div>
+ <div>
+ <h2 class="text-xl font-bold">Fredrik Arwehed</h2>
+ <p class="text-sm text-blue-300">Projektledare</p>
+ </div>
+ </div>
+
+ <div class="space-y-3 text-sm">
+ <div class="flex items-start gap-2">
+ <i class="fas fa-building text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">Arbetsgivare</div>
+ <div>Trafikverket (projekt Silverhöjdspåret)</div>
+ <div class="text-xs text-gray-500 italic">Konsult via Arwone Consulting</div>
+ </div>
+ </div>
+
+ <div class="flex items-start gap-2">
+ <i class="fas fa-phone text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">Kontakt</div>
+ <a href="tel:0701683665" class="text-accent hover:underline">070-168 36 65</a>
+ </div>
+ </div>
+
+ <div class="flex items-start gap-2">
+ <i class="fab fa-linkedin text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">LinkedIn</div>
+ <a href="https://se.linkedin.com/in/fredrik-arwehed-575a9b96" target="_blank" rel="noopener" class="text-accent hover:underline text-xs break-all">
+ se.linkedin.com/in/fredrik-arwehed-575a9b96
+ </a>
+ </div>
+ </div>
+
+ <div class="flex items-start gap-2">
+ <i class="fas fa-map-marker-alt text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">Geografisk bas</div>
+ <div>Gävle</div>
+ </div>
+ </div>
+
+ <div class="border-t border-gray-700 pt-3 mt-3">
+ <div class="text-gray-400 text-xs uppercase tracking-wider mb-2">Bakgrund</div>
+ <ul class="text-sm space-y-1 text-gray-300">
+ <li>• <strong>Högskolan Dalarna</strong> (utbildning)</li>
+ <li>• <strong>Trafikverket projektledare</strong> mars 2013 – feb 2014 (1 år)</li>
+ <li>• <strong>Åtgärdsvalsstudie Ostkustbanan</strong> (DiVA portal diva2:1364112) — med Ramböll & WSP</li>
+ </ul>
+ </div>
+
+ <div class="border-t border-gray-700 pt-3 mt-3">
+ <div class="text-gray-400 text-xs uppercase tracking-wider mb-2">Citerad i media</div>
+ <p class="citation text-sm">
+ "Jag vill verkligen tacka alla närboende för tålamodet så här långt med pågående insatser vid spårmiljön."
+ <span class="block text-xs text-gray-500 mt-2 not-italic">— Trafikverket nyhet, 10 mars 2026</span>
+ </p>
+ <p class="citation text-sm mt-2">
+ "Vi räknar också med att på denna webbplats från och med mitten av april med ungefär två veckors mellanrum presentera uppdaterade tidplaner för den pågående entreprenaden."
+ <span class="block text-xs text-gray-500 mt-2 not-italic">— Fredrik Arwehed, om uppdaterad tidplanering</span>
+ </p>
+ </div>
+
+ <div class="border-t border-gray-700 pt-3 mt-3">
+ <div class="text-gray-400 text-xs uppercase tracking-wider mb-2">Foto i NLT</div>
+ <a href="https://www.nyaludvikatidning.se/200-miljoner-pa-168-timmar-planerat-i-tre-ar/" target="_blank" rel="noopener" class="text-xs text-accent hover:underline">
+ <i class="fas fa-external-link-alt"></i> Nya Ludvika Tidning 30 maj 2026: "200 miljoner på 168 timmar"
+ </a>
+ </div>
+ </div>
+ </div>
+
+ <!-- JAN CHRISTIANS -->
+ <div class="glass-panel p-6 rounded-xl border-t-4 border-t-green-500">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-14 h-14 rounded-full bg-green-900/50 flex items-center justify-center text-green-300 text-2xl">
+ <i class="fas fa-user-cog"></i>
+ </div>
+ <div>
+ <h2 class="text-xl font-bold">Jan Christians</h2>
+ <p class="text-sm text-green-300">Delprojektledare</p>
+ </div>
+ </div>
+
+ <div class="space-y-3 text-sm">
+ <div class="flex items-start gap-2">
+ <i class="fas fa-building text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">Arbetsgivare</div>
+ <div>Trafikverket</div>
+ <div class="text-xs text-gray-500 italic">Kopplad till Projektledarbyrån (Trafikverket-beställt 350-miljonersprojekt)</div>
+ </div>
+ </div>
+
+ <div class="flex items-start gap-2">
+ <i class="fas fa-phone text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">Kontakt</div>
+ <a href="tel:0706798990" class="text-accent hover:underline">070-679 89 90</a>
+ </div>
+ </div>
+
+ <div class="flex items-start gap-2">
+ <i class="fab fa-facebook text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">Aktiv på sociala medier</div>
+ <a href="https://www.facebook.com/groups/377289885646570/" target="_blank" rel="noopener" class="text-accent hover:underline text-xs break-all">
+ Ställdalens Byalag (Facebook-grupp)
+ </a>
+ </div>
+ </div>
+
+ <div class="border-t border-gray-700 pt-3 mt-3">
+ <div class="text-gray-400 text-xs uppercase tracking-wider mb-2">Andra dokumenterade projekt</div>
+ <ul class="text-sm space-y-1 text-gray-300">
+ <li>• <strong>Riskutredning Oberget</strong> (Borlänge kommun PDF, 18 aug 2025) — granskare</li>
+ <li>• <strong>Projektledarbyrån</strong> (LinkedIn-företag) — projektledare för 350-miljonersprojekt, beställare Trafikverket</li>
+ </ul>
+ </div>
+
+ <div class="border-t border-gray-700 pt-3 mt-3">
+ <div class="text-gray-400 text-xs uppercase tracking-wider mb-2">Kommunikation med boende</div>
+ <p class="citation text-sm">
+ "Till helgen börjar Trafikverkets entreprenör med omfattande schaktarbeten i Ställdalen. Mer information finns på Trafikverkets [hemsida]."
+ <span class="block text-xs text-gray-500 mt-2 not-italic">— Jan Christians, Ställdalens Byalag (Facebook), 3v sedan</span>
+ </p>
+ <p class="text-xs text-gray-400 mt-2">
+ <i class="fas fa-info-circle"></i> Postar regelbundet om projektets framsteg — bra kontaktpunkt för operativa frågor.
+ </p>
+ </div>
+ </div>
+ </div>
+
+ <!-- CHRISTINE EKBACK -->
+ <div class="glass-panel p-6 rounded-xl border-t-4 border-t-purple-500">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-14 h-14 rounded-full bg-purple-900/50 flex items-center justify-center text-purple-300 text-2xl">
+ <i class="fas fa-user-graduate"></i>
+ </div>
+ <div>
+ <h2 class="text-xl font-bold">Christine Ekbäck</h2>
+ <p class="text-sm text-purple-300">Projektingenjör</p>
+ </div>
+ </div>
+
+ <div class="space-y-3 text-sm">
+ <div class="flex items-start gap-2">
+ <i class="fas fa-building text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">Arbetsgivare</div>
+ <div>Trafikverket</div>
+ </div>
+ </div>
+
+ <div class="flex items-start gap-2">
+ <i class="fas fa-phone text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">Kontakt</div>
+ <a href="tel:+46101230624" class="text-accent hover:underline">+46 10-123 06 24</a>
+ </div>
+ </div>
+
+ <div class="flex items-start gap-2">
+ <i class="fas fa-birthday-cake text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">Född</div>
+ <div>1986 (ca 40 år)</div>
+ </div>
+ </div>
+
+ <div class="flex items-start gap-2">
+ <i class="fas fa-map-marker-alt text-gray-500 mt-1"></i>
+ <div>
+ <div class="text-gray-400 text-xs uppercase tracking-wider">Geografisk bas</div>
+ <div>Sandviken</div>
+ </div>
+ </div>
+
+ <div class="border-t border-gray-700 pt-3 mt-3">
+ <div class="text-gray-400 text-xs uppercase tracking-wider mb-2">Verifiering</div>
+ <p class="text-sm text-gray-300">
+ Namn och arbetsgivare verifierade via Racetimer.se (löpartävling Vårruset Gävle 2026), där hon deltog med <em>Trafikverket</em> som förening.
+ </p>
+ <a href="https://www.racetimer.se/sv/race/resultlist/6834" target="_blank" rel="noopener" class="text-xs text-accent hover:underline mt-1 inline-block">
+ <i class="fas fa-external-link-alt"></i> Verifiering: racetimer.se
+ </a>
+ </div>
+
+ <div class="border-t border-gray-700 pt-3 mt-3">
+ <div class="text-gray-400 text-xs uppercase tracking-wider mb-2">Rollens betydelse</div>
+ <p class="text-sm text-gray-300">
+ Som <strong>projektingenjör</strong> är Christine den tekniska kontaktpunkten — hon svarar på frågor om kontaktledning, sprängningar, vibrationsåtgärder och bullerdämpning. Bäst att kontakta om du har en teknisk detaljfråga.
+ </p>
+ </div>
+ </div>
+ </div>
+
+ </div>
+ </div>
+ </section>
+
+ <!-- ANDRA VIKTIGA KONTAKTER -->
+ <section class="py-12 bg-darker border-t border-gray-800">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <h2 class="text-2xl font-bold mb-6">
+ <i class="fas fa-landmark text-accent mr-2"></i>
+ Andra viktiga kontaktpunkter
+ </h2>
+ <p class="text-gray-400 mb-8">Utanför projektledningen — tillsynsmyndigheter och kontrollorgan.</p>
+
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-green-500">
+ <h3 class="font-bold text-lg mb-2">Länsstyrelsen Dalarna</h3>
+ <p class="text-sm text-gray-400 mb-3">Godkänner MKB:n, beslutar om miljötillstånd, tillstyrker fastställelse</p>
+ <ul class="text-sm space-y-1 text-gray-300">
+ <li><i class="fas fa-phone text-accent mr-2"></i>010-225 00 00</li>
+ <li><i class="fas fa-envelope text-accent mr-2"></i>dalarna@lansstyrelsen.se</li>
+ <li><i class="fas fa-map-marker-alt text-accent mr-2"></i>Åsgatan 38, Falun</li>
+ <li><i class="fas fa-clock text-accent mr-2"></i>Mån-fre 8-16.30 (lunch 12-13)</li>
+ </ul>
+ </div>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-blue-500">
+ <h3 class="font-bold text-lg mb-2">Trafikverket — begär ut allmän handling</h3>
+ <p class="text-sm text-gray-400 mb-3">Offentlighetsprincipen — lagenlig rätt att ta del av alla projektdokument</p>
+ <a href="https://etjanster.trafikverket.se/begaran-om-utlamnande-av-allman-handling/" target="_blank" rel="noopener" class="text-sm text-accent hover:underline break-all">
+ <i class="fas fa-external-link-alt"></i> etjanster.trafikverket.se/begaran-om-utlamnande-av-allman-handling/
+ </a>
+ </div>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-red-500">
+ <h3 class="font-bold text-lg mb-2">JO — Justitieombudsmannen</h3>
+ <p class="text-sm text-gray-400 mb-3">Anmäl om myndighet brister i sitt uppdrag</p>
+ <ul class="text-sm space-y-1 text-gray-300">
+ <li><i class="fas fa-globe text-accent mr-2"></i><a href="https://www.jo.se/anmala/" target="_blank" rel="noopener" class="text-accent hover:underline">jo.se/anmala/ (digitalt formulär)</a></li>
+ <li><i class="fas fa-phone text-accent mr-2"></i>08-786 51 00</li>
+ </ul>
+ </div>
+
+ <div class="glass-panel p-6 rounded-xl border-l-4 border-l-yellow-500">
+ <h3 class="font-bold text-lg mb-2">Ställbergs Byalag (kontakt)</h3>
+ <p class="text-sm text-gray-400 mb-3">Andra drabbade i samma område</p>
+ <ul class="text-sm space-y-1 text-gray-300">
+ <li><i class="fas fa-globe text-accent mr-2"></i><a href="https://stallbergsbyalag.se/" target="_blank" rel="noopener" class="text-accent hover:underline">stallbergsbyalag.se</a></li>
+ <li><i class="fas fa-phone text-accent mr-2"></i>Josefine 0706573512</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- KÄLLOR -->
+ <section class="py-12 bg-dark border-t border-gray-800">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <h2 class="text-2xl font-bold mb-6">
+ <i class="fas fa-book text-accent mr-2"></i>
+ Källförteckning
+ </h2>
+ <ul class="text-sm text-gray-400 space-y-2">
+ <li>• Trafikverket huvudsida: <a href="https://www.trafikverket.se/vara-projekt/projekt-i-dalarnas-lan/silverhojdsparet-sparbyte-och-upprustning/" class="text-accent hover:underline" target="_blank" rel="noopener">silverhojdsparet-sparbyte-och-upprustning</a></li>
+ <li>• Trafikverket nyhet 2026-03-10: <a href="https://www.trafikverket.se/vara-projekt/projekt-i-dalarnas-lan/silverhojdsparet-sparbyte-och-upprustning/nyheter/2026/uppdaterad-tidplanering-presenteras/" class="text-accent hover:underline" target="_blank" rel="noopener">uppdaterad-tidplanering-presenteras</a></li>
+ <li>• Nya Ludvika Tidning 2026-05-30: "200 miljoner på 168 timmar" — <a href="https://www.nyaludvikatidning.se/200-miljoner-pa-168-timmar-planerat-i-tre-ar/" class="text-accent hover:underline" target="_blank" rel="noopener">nyaludvikatidning.se</a></li>
+ <li>• Ställbergs Byalag: <a href="https://stallbergsbyalag.se/author/admin/" class="text-accent hover:underline" target="_blank" rel="noopener">stallbergsbyalag.se/author/admin/</a></li>
+ <li>• Ställdalens Byalag (Facebook): <a href="https://www.facebook.com/groups/377289885646570/" class="text-accent hover:underline" target="_blank" rel="noopener">facebook.com/groups/377289885646570/</a></li>
+ <li>• DiVA portal (Ostkustbanan-studien): <a href="https://www.diva-portal.org/smash/get/diva2:1364112/FULLTEXT01.pdf" class="text-accent hover:underline" target="_blank" rel="noopener">diva2:1364112</a></li>
+ <li>• LinkedIn: <a href="https://se.linkedin.com/in/fredrik-arwehed-575a9b96" class="text-accent hover:underline" target="_blank" rel="noopener">fredrik-arwehed-575a9b96</a></li>
+ <li>• Länsstyrelsen Dalarna: <a href="https://www.lansstyrelsen.se/dalarna/samhalle/trafik-och-infrastruktur/planering-av-vag-och-jarnvag/" class="text-accent hover:underline" target="_blank" rel="noopener">lansstyrelsen.se/dalarna/.../planering-av-vag-och-jarnvag/</a></li>
+ <li>• Racetimer.se (Vårruset Gävle 2026, verifiering Christine Ekbäck): <a href="https://www.racetimer.se/sv/race/resultlist/6834" class="text-accent hover:underline" target="_blank" rel="noopener">racetimer.se/sv/race/resultlist/6834</a></li>
+ <li>• Borlänge kommun Riskutredning Oberget (PDF): <a href="https://www.borlange.se/download/18.3e270d6e198616773aa24061/1755503975575/Riskutredning.pdf" class="text-accent hover:underline" target="_blank" rel="noopener">Riskutredning Oberget</a></li>
+ <li>• Trafikverket e-tjänst (allmänna handlingar): <a href="https://etjanster.trafikverket.se/begaran-om-utlamnande-av-allman-handling/" class="text-accent hover:underline" target="_blank" rel="noopener">begaran-om-utlamnande-av-allman-handling/</a></li>
+ </ul>
+ </div>
+ </section>
+
+ <!-- ETISKA RAMAR -->
+ <section class="py-12 bg-darker border-t border-gray-800">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="bg-card border border-gray-700 p-6 rounded-xl">
+ <h2 class="text-xl font-bold mb-3 text-accent">
+ <i class="fas fa-balance-scale mr-2"></i>
+ Etiska ramar för detta register
+ </h2>
+ <p class="text-sm text-gray-300 mb-3">
+ Detta register följer samma principer som hela projektet: faktabaserat, källhänvisat, GDPR-skydd.
+ </p>
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+ <div>
+ <h3 class="font-bold text-green-400 mb-2">✓ Ingår</h3>
+ <ul class="space-y-1 text-gray-300">
+ <li>• Publikt namngivna roller och kontaktuppgifter</li>
+ <li>• Citat från media och offentliga möten</li>
+ <li>• LinkedIn-profildata (publik)</li>
+ <li>• Andra offentliga professionella spår</li>
+ <li>• Statlig lön (begärs via e-tjänst om relevant)</li>
+ </ul>
+ </div>
+ <div>
+ <h3 class="font-bold text-red-400 mb-2">✗ Ingår INTE</h3>
+ <ul class="space-y-1 text-gray-300">
+ <li>• Privatliv, familj, fritidsintressen</li>
+ <li>• Spekulationer om motiv eller karaktär</li>
+ <li>• Bostadsadress (bortsett från stadsdel/ort)</li>
+ <li>• Saker irrelevanta för sakfrågan</li>
+ <li>• Anklagelser utan bevis</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ </main>
+
+ <footer class="border-t border-gray-900 py-8 text-center text-gray-600 text-sm mt-20">
+ <p class="mb-2">
+ <a href="index.html" class="hover:text-accent transition-colors">
+ <i class="fas fa-arrow-left mr-1"></i>Tillbaka till Vägverket — Arbetsmiljö & Byggprojekt
+ </a>
+ </p>
+ <p>Dokumentation för ett säkrare byggarbete.</p>
+ </footer>
+
+</body>
+</html>
