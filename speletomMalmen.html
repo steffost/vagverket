@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Systemanalys: Spelet om Malmen</title>
+ <!-- Tailwind CSS för styling -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <!-- Lucide Icons för ikoner -->
+ <script src="https://unpkg.com/lucide@latest"></script>
+ <!-- Google Fonts -->
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ fontFamily: {
+ sans: ['Inter', 'sans-serif'],
+ },
+ colors: {
+ dark: '#0f172a',
+ card: '#1e293b',
+ accent: '#38bdf8',
+ profit: '#10b981',
+ loss: '#ef4444'
+ }
+ }
+ }
+ }
+ </script>
+ <style>
+ body {
+ background-color: #0f172a;
+ color: #f8fafc;
+ }
+ .fade-in {
+ opacity: 0;
+ transform: translateY(20px);
+ transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+ }
+ .fade-in.visible {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ /* Egen scrollbar för premiumkänsla */
+ ::-webkit-scrollbar {
+ width: 10px;
+ }
+ ::-webkit-scrollbar-track {
+ background: #0f172a;
+ }
+ ::-webkit-scrollbar-thumb {
+ background: #334155;
+ border-radius: 5px;
+ }
+ ::-webkit-scrollbar-thumb:hover {
+ background: #475569;
+ }
+ </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-dark">
+
+ <!-- Hero Section -->
+ <header class="relative overflow-hidden border-b border-slate-800">
+ <div class="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-dark z-0"></div>
+ <div class="max-w-6xl mx-auto px-6 py-24 relative z-10 text-center">
+ <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-sm font-medium text-accent mb-6">
+ <i data-lucide="activity" class="w-4 h-4"></i>
+ Systemanalys
+ </div>
+ <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+ Spelet om <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-500">Malmen</span>
+ </h1>
+ <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+ Naturresurserna finns lokalt. Konsekvenserna bärs lokalt. Men kapitalet flödar globalt.
+ Här är en First-Principles-nedbrytning av vilka som tjänar miljarderna och vilka som betalar priset när infrastrukturen byggs ut.
+ </p>
+ </div>
+ </header>
+
+ <!-- Main Content -->
+ <main class="max-w-6xl mx-auto px-6 py-16 space-y-24">
+
+ <!-- Sektion: De Globala Vinnarna -->
+ <section class="fade-in">
+ <div class="flex items-center gap-4 mb-8">
+ <div class="p-3 bg-profit/10 rounded-lg">
+ <i data-lucide="trending-up" class="w-8 h-8 text-profit"></i>
+ </div>
+ <h2 class="text-3xl font-bold">De Globala Vinnarna</h2>
+ </div>
+ <p class="text-slate-400 mb-8 max-w-2xl">De som sitter på det stora kapitalet och skördar frukterna. Deras affärsmodell bygger på att utnyttja råvaror utan att behöva hantera de lokala miljökonsekvenserna.</p>
+
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+ <!-- Vinnare 1 -->
+ <div class="bg-card rounded-xl p-6 border border-slate-700/50 hover:border-profit/50 transition-colors group">
+ <i data-lucide="globe-2" class="w-10 h-10 text-profit mb-4 group-hover:scale-110 transition-transform"></i>
+ <h3 class="text-xl font-bold mb-3">1. Råvarujättarna (Cargill)</h3>
+ <p class="text-slate-400 text-sm leading-relaxed">
+ Amerikanska Cargill är ett av världens största handelsbolag. Genom <em>offtake-avtal</em> har de säkrat exklusiv rätt att köpa och sälja vidare malmen. De tjänar miljarder på volymer och prisskillnader på världsmarknaden – helt opåverkade av lokalt tågbuller.
+ </p>
+ </div>
+ <!-- Vinnare 2 -->
+ <div class="bg-card rounded-xl p-6 border border-slate-700/50 hover:border-profit/50 transition-colors group">
+ <i data-lucide="pie-chart" class="w-10 h-10 text-profit mb-4 group-hover:scale-110 transition-transform"></i>
+ <h3 class="text-xl font-bold mb-3">2. Storägare & Fonder</h3>
+ <p class="text-slate-400 text-sm leading-relaxed">
+ Nätverk av investmentbolag, riskkapitalister och institutioner som gått in tidigt. När gruvan levererar, eller bolaget säljs vidare, maximerar de sin vinst. Kapitalet är rörligt och digitalt.
+ </p>
+ </div>
+ <!-- Vinnare 3 -->
+ <div class="bg-card rounded-xl p-6 border border-slate-700/50 hover:border-profit/50 transition-colors group">
+ <i data-lucide="factory" class="w-10 h-10 text-profit mb-4 group-hover:scale-110 transition-transform"></i>
+ <h3 class="text-xl font-bold mb-3">3. Stålindustrin</h3>
+ <p class="text-slate-400 text-sm leading-relaxed">
+ Den europeiska stålindustrin (bl.a. i Tyskland) är desperata efter höganrikat järn för att ställa om till vätgas. Genom att köpa denna råvara kan de sälja "grönt stål" extremt dyrt till bilindustrin och agera klimatledare.
+ </p>
+ </div>
+ </div>
+ </section>
+
+ <!-- Sektion: Möjliggöraren -->
+ <section class="fade-in bg-slate-800/30 rounded-2xl p-8 md:p-12 border border-slate-700 relative overflow-hidden">
+ <div class="absolute top-0 right-0 -mt-8 -mr-8 text-slate-800 opacity-50">
+ <i data-lucide="train" class="w-64 h-64"></i>
+ </div>
+ <div class="relative z-10 max-w-3xl">
+ <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-700 border border-slate-600 text-sm font-medium text-slate-200 mb-6">
+ Möjliggöraren & Systemfelet
+ </div>
+ <h2 class="text-3xl font-bold mb-4">Trafikverket: Industrins Logistikavdelning</h2>
+ <p class="text-slate-300 text-lg mb-6 leading-relaxed">
+ Trafikverket agerar ofta under sken av att vara en neutral myndighet, men deras regeringsuppdrag innefattar att "stärka näringslivets konkurrenskraft".
+ </p>
+ <div class="space-y-4 text-slate-400">
+ <p>
+ I praktiken fungerar de som en statligt finansierad serviceorganisation åt bolag som Cargill. Staten tillhandahåller rälsen och bekostar uppgraderingarna för att klara de massiva godsvolymerna.
+ </p>
+ <p class="font-semibold text-white">
+ Systemfelet är externalisering av kostnader:
+ </p>
+ <ul class="list-disc list-inside space-y-2 ml-4">
+ <li>Industrin behåller vinsten.</li>
+ <li>Staten står för infrastrukturen.</li>
+ <li><strong>Individen (du) står för den dolda notan</strong> i form av buller, vibrationer och risk för förorenat dricksvatten.</li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- Sektion: De Lokala Förlorarna -->
+ <section class="fade-in">
+ <div class="flex items-center gap-4 mb-8">
+ <div class="p-3 bg-loss/10 rounded-lg">
+ <i data-lucide="arrow-down-circle" class="w-8 h-8 text-loss"></i>
+ </div>
+ <h2 class="text-3xl font-bold">De Som Får Smulorna & Notan</h2>
+ </div>
+
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+ <!-- Förlorare 1 -->
+ <div class="bg-card rounded-xl p-8 border border-slate-700/50 relative overflow-hidden">
+ <div class="absolute top-4 right-4 text-slate-600">
+ <i data-lucide="building-2" class="w-24 h-24 opacity-20"></i>
+ </div>
+ <h3 class="text-2xl font-bold mb-4 relative z-10">Staten & Kommunen</h3>
+ <p class="text-slate-400 mb-6 relative z-10">
+ Sverige har lagstiftat fram världens kanske mest generösa villkor för internationella gruvbolag för att locka hit dem.
+ </p>
+ <div class="bg-slate-900 rounded-lg p-4 border border-slate-700 relative z-10">
+ <h4 class="font-bold text-sm text-slate-300 uppercase tracking-wider mb-2">Mineralersättning (0,2%)</h4>
+ <div class="space-y-3">
+ <div>
+ <div class="flex justify-between text-sm mb-1">
+ <span class="text-slate-400">Till Markägaren (75% av totalen)</span>
+ <span class="text-white font-mono">0,15%</span>
+ </div>
+ <div class="w-full bg-slate-800 rounded-full h-1.5"><div class="bg-blue-500 h-1.5 rounded-full" style="width: 75%"></div></div>
+ </div>
+ <div>
+ <div class="flex justify-between text-sm mb-1">
+ <span class="text-slate-400">Till Staten (25% av totalen)</span>
+ <span class="text-white font-mono">0,05%</span>
+ </div>
+ <div class="w-full bg-slate-800 rounded-full h-1.5"><div class="bg-blue-400 h-1.5 rounded-full" style="width: 25%"></div></div>
+ </div>
+ <div>
+ <div class="flex justify-between text-sm mb-1">
+ <span class="text-loss font-semibold">Till Kommunen/Regionen</span>
+ <span class="text-loss font-mono font-bold">0,00%</span>
+ </div>
+ <div class="w-full bg-slate-800 rounded-full h-1.5"></div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Förlorare 2 -->
+ <div class="bg-card rounded-xl p-8 border border-slate-700/50 border-l-4 border-l-loss relative overflow-hidden">
+ <h3 class="text-2xl font-bold mb-4">Lokalbefolkningen</h3>
+ <p class="text-slate-400 mb-6">
+ Det är de boende längs med transportsträckorna som får bära den faktiska fysiska och psykiska kostnaden av industriprojektet.
+ </p>
+ <ul class="space-y-4">
+ <li class="flex items-start gap-3">
+ <i data-lucide="waves" class="w-5 h-5 text-loss shrink-0 mt-0.5"></i>
+ <div>
+ <strong class="text-slate-200 block">Grundvattnet hotas</strong>
+ <span class="text-sm text-slate-400">Sprängningar och markarbeten riskerar att förstöra privata brunnar och vattentillgång.</span>
+ </div>
+ </li>
+ <li class="flex items-start gap-3">
+ <i data-lucide="volume-2" class="w-5 h-5 text-loss shrink-0 mt-0.5"></i>
+ <div>
+ <strong class="text-slate-200 block">Buller och vibrationer</strong>
+ <span class="text-sm text-slate-400">Tunga malmtåg dygnet runt skapar enorma ljudkulisser och vibrationer som sänker livskvaliteten.</span>
+ </div>
+ </li>
+ <li class="flex items-start gap-3">
+ <i data-lucide="home" class="w-5 h-5 text-loss shrink-0 mt-0.5"></i>
+ <div>
+ <strong class="text-slate-200 block">Sänkta fastighetsvärden</strong>
+ <span class="text-sm text-slate-400">Medan aktiekurserna stiger i London och New York, sjunker värdet på fastigheterna längs spåret.</span>
+ </div>
+ </li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- Slutsats / Takeaway -->
+ <section class="fade-in mt-12 bg-gradient-to-r from-blue-900/40 to-slate-800 rounded-2xl p-8 text-center border border-blue-500/30 shadow-[0_0_30px_rgba(56,189,248,0.1)]">
+ <i data-lucide="scale" class="w-12 h-12 text-accent mx-auto mb-4"></i>
+ <h2 class="text-2xl font-bold mb-4">Förhandlingsprincipen</h2>
+ <p class="text-lg text-slate-300 max-w-3xl mx-auto mb-6">
+ Om staten (via Trafikverket) lägger miljarder på att bereda väg för globala aktörers vinster, är det deras skyldighet att först säkerställa att notan inte landar på medborgarna.
+ </p>
+ <div class="inline-block bg-dark px-6 py-4 rounded-xl border border-slate-700 text-left">
+ <p class="text-accent font-semibold mb-2">Kravet mot Trafikverket är logiskt och glasklart:</p>
+ <p class="text-slate-300">
+ "Om ni ska agera möjliggörare för miljardvinster åt Cargill på spåren utanför mitt hus, ska ni ta de medel som krävs ur er budget för att garantera min tystnad, min rena luft och mitt rena dricksvatten under tiden."
+ </p>
+ </div>
+ </section>
+
+ </main>
+
+ <footer class="border-t border-slate-800 mt-24 py-8 text-center text-slate-500 text-sm">
+ <p>Systemanalys: Infrastruktur, Kapital och Lokala Konsekvenser.</p>
+ </footer>
+
+ <!-- Initiera Lucide Icons och Scroll-animationer -->
+ <script>
+ // Initiera ikoner
+ lucide.createIcons();
+
+ // Enkel Intersection Observer för att fada in element när man scrollar
+ document.addEventListener("DOMContentLoaded", function() {
+ const observer = new IntersectionObserver((entries) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ entry.target.classList.add('visible');
+ }
+ });
+ }, {
+ threshold: 0.1
+ });
+
+ document.querySelectorAll('.fade-in').forEach(el => {
+ observer.observe(el);
+ });
+
+ // Trigga första elementen direkt om de är i view
+ setTimeout(() => {
+ document.querySelectorAll('.fade-in').forEach(el => {
+ const rect = el.getBoundingClientRect();
+ if (rect.top < window.innerHeight) {
+ el.classList.add('visible');
+ }
+ });
+ }, 100);
+ });
+ </script>
+</body>
+</html>
